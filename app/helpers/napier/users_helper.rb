@@ -1,0 +1,2 @@
+module Napier::UsersHelper
+end

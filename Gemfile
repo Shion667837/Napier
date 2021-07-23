@@ -30,6 +30,8 @@ gem 'toastr-rails'
 
 gem 'rails-i18n'
 
+gem 'jquery-rails'
+
 gem 'redis'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
