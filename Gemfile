@@ -30,6 +30,8 @@ gem 'toastr-rails'
 
 gem 'rails-i18n'
 
+gem 'uglifier'
+
 gem 'jquery-rails'
 
 gem 'redis'
