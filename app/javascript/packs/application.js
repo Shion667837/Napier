@@ -13,6 +13,9 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require('bootstrap/dist/js/bootstrap.min.js')
+import "../src/style.scss";
+require("jquery");
+require("bootstrap");
 
 //= require moment
 //= require bootstrap-datetimepicker
