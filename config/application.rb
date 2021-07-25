@@ -20,5 +20,6 @@ module Napier
     # config.eager_load_paths << Rails.root.join("extras")
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.i18n.default_locale = :ja
+    config.assets.initialize_on_precompile = false
   end
 end
