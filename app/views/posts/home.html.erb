@@ -1,0 +1,93 @@
+<% if logged_in? %>
+  <%= render 'layouts/sidebar' %>
+  <%= render 'users/user_index' %>
+  <div class="container-fiuld post">
+    <ul class="all-post">
+      <% @posts.each do |post| %>
+        <%= link_to "posts/#{post.id}" do %>
+          <div class="user-feed">
+            <div class="rank-post-flame">
+              <div class="post-show-icon">
+                <% if post.user.image_name? %>
+                  <%= image_tag post.user.image_name.url, class: "host-icon" %>
+                  <span class="host-name"><%= post.user.name %></span>
+                <% else %>
+                  <%= image_tag "/user_images/default.png", class: "host-icon" %>
+                  <span class="host-name"><%= post.user.name %></span>
+                <% end %>
+                <% if logged_in? %>
+                  <% if post.user_id == current_user.id %>
+                    <%= link_to  post, method: :delete, data: { confirm: "#{post.name}を削除して大丈夫ですか？" } do %>
+                      <i class="fas fa-trash-alt trash"></i>
+                    <% end %>
+                  <% end %>
+                <% end%>
+              </div>
+              <div class="post-img">
+                <img src="<%= post.stockprice %>" class="post-image" alt="画像">
+              </div>
+              <div class="post-text-box">
+                <p class="post-name"><%= post.name %></p>
+                <p class="post-place"><%= post.body.truncate(100) %></p>
+                <div class="post-under-items">
+                  <p class="post-under-item" id="post_<%= post.id %>">
+                    <% if logged_in? %>
+                      <% if current_user.liked_by?(post.id) %>
+                        <%= render 'unlike', post: post %>
+                      <% else %>
+                        <%= render 'likes', post: post %>
+                      <% end %>
+                    <% else %>
+                      <%= render 'likes', post: post %>
+                    <% end %>
+                  </p>
+                  <p class="post-under-item">
+                    <i class="far fa-comment"></i>
+                    <%= post.comments.count %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <div class="top">
+    <div class="top-main">
+      <div class="container">
+        <div class="row">
+          <div class="top-contents">
+            <div class="col-md-8">
+              <div class="home-title">
+                <h4 class="home-napier">Napier</h4>
+                <%= image_tag "IMG_9446.PNG", class: "napier-home-image" %>
+                <div class="home-about">
+                  <h2>Napier（ネイピア）は自分の企業分析を簡単にシェアできるSNSです。</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="home-form">
+                <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+                  <%= f.email_field :email, class: 'form-control', placeholder: "メールアドレス" %>
+                  <%= f.password_field :password, class: 'form-control', placeholder: "パスワード" %>
+                  <%= f.label :remember_me, class: "checkbox inline" do %>
+                    <%= f.check_box :remember_me %>
+                    <span>パスワードを記憶する</span>
+                  <% end %>
+                  <%= f.submit "ログイン", class: "btn btn-primary" %>
+                <% end %>
+                <div class="home-signup">
+                  <%= link_to "登録する", signup_path, class: "btn" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render "layouts/footer" %>
+<% end %>

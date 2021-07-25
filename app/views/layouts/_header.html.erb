@@ -1,11 +1,11 @@
 <header class="navbarInverse">
   <div class="container">
-    <%= link_to "Napier", napier_root_path, id: "logo" %>
+    <%= link_to "Napier", root_path, id: "logo" %>
     <%= image_tag "IMG_9442.PNG", class: "napier-image" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li class="search-form">
-          <%= search_form_for @search, url: napier_posts_search_path do |f| %>
+          <%= search_form_for @search, url: posts_search_path do |f| %>
             <% f.label :name %>
             <%= f.search_field :name_or_body_or_place_cont, placeholder: "キーワード" %>
             <% f.submit %>
@@ -26,19 +26,19 @@
                     <p>三</p>
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuBotton">
-                    <a class="dropdown-item"><%= link_to "投稿する", new_napier_post_path %></a><br>
-                    <a class="dropdown-item"><%= link_to "アカウント", napier_user_path(@current_user) %></a><br>
-                    <a class="dropdown-item"><%= link_to "編集", edit_napier_user_path(@current_user) %></a><br>
-                    <a class="dropdown-item"><%= link_to "ユーザー一覧", napier_users_path %></a><br>
-                    <a class="dropdown-item"><%= link_to "ログアウト", napier_logout_path, method: :delete %></a>
+                    <a class="dropdown-item"><%= link_to "投稿する", new_post_path %></a><br>
+                    <a class="dropdown-item"><%= link_to "アカウント", @current_user %></a><br>
+                    <a class="dropdown-item"><%= link_to "編集", edit_user_path(@current_user) %></a><br>
+                    <a class="dropdown-item"><%= link_to "ユーザー一覧", users_path %></a><br>
+                    <a class="dropdown-item"><%= link_to "ログアウト", logout_path, method: :delete %></a>
                   </div>
                 </div>
               </li>
             </li>
           </ul>
         <% else %>
-          <li class="btn1"><%= link_to "ログイン", napier_login_path %></li>
-          <li class="btn2"><%= link_to "登録する", napier_signup_path %></li>
+          <li class="btn1"><%= link_to "ログイン", login_path %></li>
+          <li class="btn2"><%= link_to "登録する", signup_path %></li>
         <% end %>
       </ul>
     </nav>

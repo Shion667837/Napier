@@ -14,7 +14,7 @@
           <%= @current_user.name %>
         </div>
         <div class="side-stats">
-          <%= render 'napier/shared/side_stats' %>
+          <%= render 'shared/side_stats' %>
         </div>
         <div class="sidebar-body">
           <%= @current_user.body %>
@@ -44,12 +44,12 @@
         </div>
         <div class="sidebar-btn">
           <div class="btn btn-primary">
-            <%= link_to "プロフィール編集", edit_napier_user_path(@current_user) %>
+            <%= link_to "プロフィール編集", edit_user_path(@current_user) %>
           </div>
         </div>
         <div class="sidebar-btn">
           <div class="post-btn">
-            <%= link_to new_napier_post_path do %>
+            <%= link_to new_post_path do %>
               <i class="fas fa-share-square"></i>
             <% end %>
           </div>
@@ -57,11 +57,11 @@
       </div>
       <div class="nav_list">
         <div class="sidebar-list">
-          <%= link_to "/napier/users/#{@user}", class: "nav_link active border" do %>
+          <%= link_to @user, class: "nav_link active border" do %>
             <i class="far fa-clipboard nav_icon"></i>
             <span class="nav_name">投稿一覧</span>
           <% end %>
-          <%= link_to napier_favorites_index_path, class: "nav_link" do %>
+          <%= link_to favorites_index_path, class: "nav_link" do %>
             <i class="far fa-star nav_icon"></i>
             <span class="nav_name">お気に入り企業</span>
           <% end %>
@@ -73,13 +73,13 @@
           </a>
           <ul class="collapse list-unstyled" id="pageSubmenu">
             <li>
-              <%= link_to '全体', napier_posts_post_ranking_path %>
+              <%= link_to '全体', posts_post_ranking_path %>
             </li>
             <li>
-              <%= link_to '週間', napier_posts_week_ranking_path %>
+              <%= link_to '週間', posts_week_ranking_path %>
             </li>
             <li>
-              <%= link_to '月間', napier_posts_month_ranking_path %>
+              <%= link_to '月間', posts_month_ranking_path %>
             </li>
           </ul>
           <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="nav_link">
@@ -98,25 +98,25 @@
             </div>
             <ul class="target-area">
               <li>
-                <a class="tesla" href="napier/companies/1">TESLA</a>
+                <a class="tesla" href="companies/1">TESLA</a>
               </li>
               <li>
-                <a class="tesla" href="napier/companies/2">Apple</a>
+                <a class="tesla" href="companies/2">Apple</a>
               </li>
               <li>
-                <a class="tesla" href="napier/companies/3">Google</a>
+                <a class="tesla" href="companies/3">Google</a>
               </li>
               <li>
-                <a class="tesla" href="napier/companies/4">Amazon</a>
+                <a class="tesla" href="companies/4">Amazon</a>
               </li>
               <li>
-                <a class="tesla" href="napier/companies/5">NETFLIX</a>
+                <a class="tesla" href="companies/5">NETFLIX</a>
               </li>
             </ul>
           </ul>
         </div>
         <div class="sidebar-list">
-          <%= link_to napier_about_path, class: "nav_link" do %>
+          <%= link_to about_path, class: "nav_link" do %>
             <i class="fab fa-adn nav_icon"></i>
             <span class="nav_name">ネイピアとは</span>
           <% end %>
