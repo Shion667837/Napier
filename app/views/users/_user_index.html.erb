@@ -6,37 +6,32 @@
       <div class="nav_list">
         <h2 class="right-nav-top">おすすめユーザー</h2>
         <div class="sidebar-list">
-          <ul class="users">
-            <div class="users-index">
-              <% @users.each do |user| %>
-                <li>
-                  <div class="post-show-icon">
-                    <% if user.image_name? %>
-                      <%= image_tag user.image_name.url, class: "host-icon" %>
-                      <span class="host-name"><%= link_to user.name, user %></span>
-                    <% else %>
-                      <%= image_tag "/user_images/default.png", class: "host-icon" %>
-                      <span class="host-name"><%= link_to user.name, user %></span>
-                    <% end %>
-                  </div>
-                </li>
-              <% end %>
+          <div class="cp_box">
+            <input id="cp01" type="checkbox">
+            <label for="cp01"></label>
+            <div class="cp_container">
+              <ul class="users">
+                <div class="users-index">
+                  <% @users.each do |user| %>
+                    <li>
+                      <div class="post-show-icon">
+                        <% if user.image_name? %>
+                          <%= image_tag user.image_name.url, class: "host-icon" %>
+                          <span class="host-name"><%= link_to user.name, user %></span>
+                        <% else %>
+                          <%= image_tag "/user_images/default.png", class: "host-icon" %>
+                          <span class="host-name"><%= link_to user.name, user %></span>
+                        <% end %>
+                      </div>
+                    </li>
+                  <% end %>
+                </div>
+              </ul>
             </div>
-          </ul>
+          </div>
         </div>
-        <div class="sidebar-list">
-          <%= link_to about_path, class: "nav_link" do %>
-            <i class="fab fa-adn nav_icon"></i>
-            <span class="nav_name">ネイピアとは</span>
-          <% end %>
-          <a href="#" class="nav_link">
-            <i class='fas fa-users-cog nav_icon'></i>
-            <span class="nav_name">利用規約</span>
-          </a>
-          <a href="#" class="nav_link">
-            <i class='fas fa-question nav_icon'></i>
-            <span class="nav_name">ヘルプ</span>
-          </a>
+        <div class="sidebar-list comming-soon">
+          <p>Coming soon...</p>
         </div>
       </div>
     </div>

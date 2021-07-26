@@ -96,6 +96,7 @@ input, textarea, select {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 20px;
+  height: 34px;
 }
 
 li {
@@ -313,7 +314,7 @@ footer h3 {
 .sidebar-header img {
   width: 145px;
   height: 145px;
-  border-radius: 40%;
+  border-radius: 50%;
   object-fit: cover;
   padding: 0px;
 }
@@ -806,6 +807,7 @@ a[data-toggle="collapse"] {
 
 #session_remember_me {
   width: auto;
+  height: 15px;
   margin-left: 0;
 }
 
@@ -818,20 +820,18 @@ a[data-toggle="collapse"] {
 #navigation{
   display: flex;
   justify-content: center;
-  padding-top: 10px;
 }
 
 #navigation img {
-  width: 45px;
+  width: 48px;
   height: 45px;
-  border-radius: 40%;
+  border-radius: 50%;
   object-fit: cover;
-  padding-bottom: 10px;
 }
 
 #navigation li{
   list-style-type: none;
-  font-size: 20px;
+  font-size: 23px;
 }
 
 #navigation li a{
@@ -857,9 +857,8 @@ a[data-toggle="collapse"] {
 .users {
   list-style: none;
   margin: 0;
-  padding: 20px 10px 40px 10px;
+  padding: 20px 10px 0 10px;
   overflow: hidden;
-  box-shadow: 0 2px 6px #c1ced7;
   width: 100%;
   li {
     overflow: auto;
@@ -870,6 +869,72 @@ a[data-toggle="collapse"] {
 
 .users-index {
   padding-bottom: 10px;
+}
+
+.cp_box *, .cp_box *:before, .cp_box *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cp_box {
+  position: relative;
+}
+
+.cp_box label {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  height: 140px; /* グラデーションの高さ */
+  cursor: pointer;
+  text-align: center;
+  /* 以下グラデーションは背景を自身のサイトに合わせて設定してください */
+  background: linear-gradient(to bottom, rgba(250, 252, 252, 0) 0%, rgba(250, 252, 252, 0.95) 90%);
+}
+
+.cp_box input:checked + label {
+  background: inherit; /* 開いた時にグラデーションを消す */
+}
+
+.cp_box label:after {
+  line-height: 2.5rem;
+  position: absolute;
+  z-index: 2;
+  bottom: 20px;
+  left: 50%;
+  width: 16rem;
+  font-family: FontAwesome;
+  content: 'さらに表示する';
+  transform: translate(-50%, 0);
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  border-radius: 20px;
+  background-color: #337ab7;
+}
+
+.cp_box input {
+  display: none;
+}
+
+.cp_box .cp_container {
+  overflow: hidden;
+  transition: all 0.5s;
+  height: 450px; /* 開く前に見えている部分の高さ */
+}
+
+.cp_box input:checked + label:after {
+  font-family: FontAwesome;
+  content: '閉じる';
+}
+
+.cp_box input:checked ~ .cp_container {
+  height: auto;
+  transition: all 0.5s;
+  padding-bottom: 80px; /* 閉じるボタンのbottomからの位置 */
+}
+
+.cooming-soon p{
+  padding: 40px;
 }
 
 // user show
@@ -905,7 +970,7 @@ a[data-toggle="collapse"] {
 
 .user-view-icon img {
   border-radius: 50%;
-  height: 200px;
+  height: 220px;
   margin-bottom: 16px;
   width: 100%;
 }
@@ -930,6 +995,20 @@ a[data-toggle="collapse"] {
 .update-contents {
   border-bottom: 1px solid #eaedef;
   font-size: 16px;
+}
+
+.like-user-side {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.like-user-side a {
+  text-decoration: none;
+}
+
+.back-page {
+  text-align: center;
+  padding-top: 100px;
 }
 
 .user-index-post {
@@ -979,6 +1058,45 @@ a[data-toggle="collapse"] {
   padding: 30px;
 }
 
+.unpost-title {
+  padding: 50px;
+}
+
+.unpost-title h3 {
+  font-size: 35px;
+  padding: 30px 0;
+}
+
+.unpost-title p {
+  font-size: 19px;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.unpost-new-btn {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.unpost-new-btn a {
+  color: #F6F8F9;
+  font-size: 25px;
+}
+
+.post-show-icon div {
+  width: 200px;
+  float: right;
+}
+
+.post-show-icon input.btn {
+  width: 200px;
+  float: right;
+  margin: 14px 0;
+}
+
+.host-detail-items {
+  padding: 20px 0;
+}
 
 
 // edit new
@@ -1370,16 +1488,6 @@ span.host-name {
   color: #000 !important;
 }
 
-.rank_tabs {
-  text-align: center;
-  margin-bottom: 32px;
-  border-bottom: 2px solid #27ae60;
-}
-
-.rank-tabs a.green {
-  color: #27ae60;
-}
-
 .profile-links {
   list-style: none;
   .profile-link {
@@ -1487,6 +1595,17 @@ a.favorite-btn {
 
 // RANKING CSS
 
+.rank_tabs {
+  text-align: center;
+  margin-bottom: 32px;
+  border-bottom: 2px solid blue
+}
+
+.rank_tab {
+  width: 100px;
+  font-size: 20px;
+}
+
 .rank-user {
   padding: 30px 140px 30px 140px;
 }
@@ -1501,7 +1620,7 @@ a.favorite-btn {
 
 .rank-post-flame {
   border: 1px solid #C0C0C0;
-  margin: 30px 100px 30px 100px;
+  margin: 30px 130px;
   padding: 50px;
   width: 800px;
   align-items: center;

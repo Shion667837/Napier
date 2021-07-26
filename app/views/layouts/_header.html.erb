@@ -13,7 +13,7 @@
         </li>
         <% if logged_in? %>
           <ul id="navigation">
-            <li><%= @current_user.name %></li>
+            <li><%= link_to @current_user.name, @current_user %></li>
             <li>
               <% if @current_user.image_name? %>
                 <%= image_tag @current_user.image_name.url %>
@@ -29,7 +29,6 @@
                     <a class="dropdown-item"><%= link_to "投稿する", new_post_path %></a><br>
                     <a class="dropdown-item"><%= link_to "アカウント", @current_user %></a><br>
                     <a class="dropdown-item"><%= link_to "編集", edit_user_path(@current_user) %></a><br>
-                    <a class="dropdown-item"><%= link_to "ユーザー一覧", users_path %></a><br>
                     <a class="dropdown-item"><%= link_to "ログアウト", logout_path, method: :delete %></a>
                   </div>
                 </div>

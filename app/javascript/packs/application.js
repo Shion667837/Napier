@@ -104,3 +104,4 @@ linkColor.forEach(l=> l.addEventListener('click', colorLink))
 });
 
 const flashMsg = document.querySelector('.alert')
+

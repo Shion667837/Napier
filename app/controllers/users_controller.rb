@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user.image_name = 'default.png'
     if @user.save
       log_in @user
-      flash[:success] = 'ようこそTravel Appへ！'
+      flash[:success] = 'ようこそNapierへ！'
       redirect_to @user
     else
       render 'new'
@@ -52,6 +52,7 @@ class UsersController < ApplicationController
     @title = 'フォロー'
     @user  = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page])
+    @recommenusers = User.all
     render 'show_follow'
   end
 
@@ -59,6 +60,7 @@ class UsersController < ApplicationController
     @title = 'フォロワー'
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
+    @recommenusers = User.all
     render 'show_follow'
   end
 

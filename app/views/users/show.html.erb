@@ -38,7 +38,15 @@
             </div>
           <% end %>
         <% else %>
-          <h1>未投稿</h1>
+          <div class="unpost-title">
+            <h3>未投稿</h3>
+            <p>株価画像・ビジネスモデルをNapierで投稿するとここに表示されます。</p>
+            <div class="unpost-new-btn">
+              <div class="btn btn-primary">
+                <%= link_to "新たに投稿する！", new_post_path %>
+              </div>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>

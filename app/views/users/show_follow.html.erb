@@ -12,16 +12,34 @@
                 <% if user.image_name? %>
                   <%= image_tag user.image_name.url, class: "host-icon" %>
                   <span class="host-name"><%= link_to user.name, user %></span>
+                  <div class="host-detail-items">
+                    <span class="host-item">投稿数 : <%= user.posts.count %></span>
+                    <span class="host-item">いいね数 : <%= link_to user.likes.count %></span>
+                  </div>
                 <% else %>
                   <%= image_tag "/user_images/default.png", class: "host-icon" %>
                   <span class="host-name"><%= link_to user.name, user %></span>
+                  <div class="host-detail-items">
+                    <span class="host-item">投稿数 : <%= user.posts.count %></span>
+                    <span class="host-item">いいね数 : <%= link_to user.likes.count %></span>
+                  </div>
                 <% end %>
               </div>
             <% end %>
           </div>
           <%= will_paginate %>
+          <div class="back-page">
+            <%= link_to "詳細ページに戻る", @user %>
+          </div>
+        <% else %>
+          <div class="unpost-title">
+            <p>他のユーザーをフォローして企業分析、ビジネスモデル、株式の知識を参考にしよう！</p>
+            <%= render 'users' %>
+          </div>
+          <div class="back-page">
+            <%= link_to "詳細ページに戻る", @user %>
+          </div>
         <% end %>
-        <%= link_to "詳細ページに戻る", @user %>
       </div>
     </div>
   </div>

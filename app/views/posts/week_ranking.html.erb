@@ -1,13 +1,10 @@
 <div class="container-fiuld post">
   <h3 class="ppp">週間ランキング</h3>
-  <div class="rank_tabs row mt-4">
-    <%= link_to posts_post_ranking_path, class: "left btn green" do %>
+  <div class="rank_tabs mt-4">
+    <%= link_to posts_post_ranking_path, class: "rank_tab btn" do %>
       全体
     <% end %>
-    <%= link_to posts_week_ranking_path, class: "center btn green" do %>
-      週間
-    <% end %>
-    <%= link_to posts_month_ranking_path, class: "right btn green" do %>
+    <%= link_to posts_month_ranking_path, class: "rank_tab btn" do %>
       月間
     <% end %>
   </div>

@@ -13,6 +13,7 @@
     <div class="stats">
       <%= render 'shared/stats' %>
     </div>
+    <%= render 'follow_form' if logged_in? %>
     <div class="user-view-sns">
       <ul class="profile-links">
         <% if @user.twitter.present? %>
@@ -48,6 +49,10 @@
       <%= link_to "編集", edit_user_path(@user), class: "btn btn-primary" %>
     </div>
   <% end %>
-  <%= render 'follow_form' if logged_in? %>
-  <%= link_to 'いいね一覧', likes_user_path(@user) %>
+  <div class="like-user-side">
+    <%= link_to 'いいね一覧', likes_user_path(@user) %>
+  </div>
+  <div class="like-user-side">
+    <%= link_to 'お気に入り企業一覧', favorites_index_path(@user) %>
+  </div>
 </div>

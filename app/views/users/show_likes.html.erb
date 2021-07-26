@@ -4,9 +4,11 @@
     <div class="user-main-contents">
       <%= render 'sidebar_show' %>
       <div class="user-index-post">
-        <%= @likes.each do |like| %>
-          <div class="user-feed">
-              <%= link_to "/posts/#{like.post.id}" do %>
+        <% if @user.likes.present? %>
+          <h2>いいね数： <%= @user.likes.count %></h2>
+          <%= @likes.each do |like| %>
+            <div class="user-feed">
+              <%= link_to post_path(like.post.id) do %>
                 <div class="user-post-flame">
                   <div class="post-show-icon">
                     <% if like.post.user.image_name? %>
@@ -34,6 +36,18 @@
                 </div>
               <% end %>
             </div>
+          <% end %>
+          <div class="back-page">
+            <%= link_to "詳細ページに戻る", @user %>
+          </div>
+        <% else %>
+          <div class="unpost-title">
+            <h3>まだいいねはありません</h3>
+            <p>気に入った投稿のハートをタップすると、ここに表示されます。</p>
+          </div>
+          <div class="back-page">
+            <%= link_to "詳細ページに戻る", @user %>
+          </div>
         <% end %>
       </div>
     </div>
