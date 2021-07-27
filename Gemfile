@@ -18,6 +18,10 @@ gem 'bootstrap-sass', '3.4.1'
 
 gem 'carrierwave'
 
+gem 'fog-aws'
+
+gem 'mini_magick'
+
 gem 'ransack'
 
 gem 'bootstrap3-datetimepicker-rails'
@@ -33,6 +37,8 @@ gem 'rails-i18n'
 gem 'uglifier'
 
 gem 'jquery-rails'
+
+gem "aws-sdk-s3", require: false
 
 gem 'redis'
 # Use SCSS for stylesheets

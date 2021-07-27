@@ -1,0 +1,15 @@
+current directory: /Users/xionfortune/environment/Napier/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/Users/xionfortune/.rbenv/versions/3.0.0/bin/ruby -I /Users/xionfortune/.rbenv/versions/3.0.0/lib/ruby/3.0.0 -r ./siteconf20210726-7045-iieydj.rb extconf.rb
+creating Makefile
+
+current directory: /Users/xionfortune/environment/Napier/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/xionfortune/environment/Napier/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/xionfortune/environment/Napier/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20210726-7045-tyhmej

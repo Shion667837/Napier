@@ -1,0 +1,15 @@
+current directory: /Users/xionfortune/environment/Napier/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.7.5/ext/bootsnap
+/Users/xionfortune/.rbenv/versions/3.0.0/bin/ruby -I /Users/xionfortune/.rbenv/versions/3.0.0/lib/ruby/3.0.0 -r ./siteconf20210726-7045-5zwvy4.rb extconf.rb
+creating Makefile
+
+current directory: /Users/xionfortune/environment/Napier/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/xionfortune/environment/Napier/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/xionfortune/environment/Napier/vendor/bundle/ruby/3.0.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210726-7045-p2qizd/bootsnap
