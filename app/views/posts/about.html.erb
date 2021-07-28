@@ -22,30 +22,32 @@
             </div>
           </div>
         </div>
-        <div class="top-box">
-          <div class="top-wrapper">
-            <div class="top-about">
-              <div class="top-about-heading">
-                <h3 class="head-h3">ログイン / 新規登録</h3>
+        <% unless logged_in? %>
+          <div class="top-box">
+            <div class="top-wrapper">
+              <div class="top-about">
+                <div class="top-about-heading">
+                  <h3 class="head-h3">ログイン / 新規登録</h3>
+                </div>
+                <p>ログイン/新規登録すると、このSNSが提供する各種サービスが利用可能になります！</p>
+                <div class="top-about-items">
+                  <ol>
+                    <li>企業をお気に入り登録できる</li>
+                    <li>自分の分析結果を自由に投稿できる</li>
+                    <li>ユーザー投稿記録が残る</li>
+                  </ol>
+                </div>
+                <p>今後さまざまな機能を実装していく予定です。Comming Soon !!!</p>
               </div>
-              <p>ログイン/新規登録すると、このSNSが提供する各種サービスが利用可能になります！</p>
-              <div class="top-about-items">
-                <ol>
-                  <li>企業をお気に入り登録できる</li>
-                  <li>自分の分析結果を自由に投稿できる</li>
-                  <li>ユーザー投稿記録が残る</li>
-                </ol>
-              </div>
-              <p>今後さまざまな機能を実装していく予定です。Comming Soon !!!</p>
             </div>
           </div>
-        </div>
-        <div class="top-footer-btn">
-          <%= link_to "ログイン", login_path %>
-        </div>
-        <div class="top-footer-btn">
-          <%= link_to "登録する", signup_path %>
-        </div>
+          <div class="top-footer-btn">
+            <%= link_to "ログイン", login_path %>
+          </div>
+          <div class="top-footer-btn">
+            <%= link_to "登録する", signup_path %>
+          </div>
+        <% end %>
       </div>
       </div>
     </div>

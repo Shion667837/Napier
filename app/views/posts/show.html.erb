@@ -20,33 +20,35 @@
             </div>
             <div class="post-show-prof">
               <p class="show-name"><%= @post.name %></p>
-              <p class="show-place"><%= @post.place %></p>
+              <p class="show-user-name"><%= link_to @post.user.name, @user %></p>
             </div>
           </div>
           <p class="show-body"><%= @post.body %></p>
-          <div class="likes-icon">
-            <p id="post_<%= @post.id %>">
-            <% if logged_in? %>
-              <% if @current_user.liked_by?(@post.id) %>
-                <%= render 'unlike', post: @post %>
+          <div class="post-show-user">
+            <div class="likes-icon">
+              <p id="post_<%= @post.id %>">
+              <% if logged_in? %>
+                <% if @current_user.liked_by?(@post.id) %>
+                  <%= render 'unlike', post: @post %>
+                <% else %>
+                  <%= render 'likes', post: @post %>
+                <% end %>
               <% else %>
                 <%= render 'likes', post: @post %>
               <% end %>
-            <% else %>
-              <%= render 'likes', post: @post %>
-            <% end %>
-          </p>
-          </div>
-          <div class="trash-icon">
-            <p>
-              <% if logged_in? %>
-                <% if @post.user_id == @current_user.id %>
-                  <%= link_to @post, method: :delete, data: { confirm: "#{@post.name}を削除して大丈夫ですか？" } do %>
-                    <i class="fas fa-trash-alt"></i>
-                  <% end %>
-                <% end %>
-              <% end%>
             </p>
+            </div>
+            <div class="trash-icon">
+              <p>
+                <% if logged_in? %>
+                  <% if @post.user_id == @current_user.id %>
+                    <%= link_to @post, method: :delete, data: { confirm: "#{@post.name}を削除して大丈夫ですか？" } do %>
+                      <i class="fas fa-trash-alt"></i>
+                    <% end %>
+                  <% end %>
+                <% end%>
+              </p>
+            </div>
           </div>
           <div class="edit-icon-show">
             <% if logged_in? %>
@@ -75,40 +77,40 @@
         <div class="col-md-5">
           <div class="post-show-form">
             <div class="post-show-detail">
-              <%= image_tag "tesla1.png", class: "tesla1-post-image" %>
+              <%= image_tag "tesla1.png", class: "tesla1-post-image ai-image" %>
             </div>
             <div class="post-show-detail">
-              <%= image_tag "tesla2.png", class: "tesla2-post-image" %>
+              <%= image_tag "tesla2.png", class: "tesla2-post-image ai-image" %>
             </div>
             <div class="post-show-detail">
-              <%= image_tag "tesla3.png", class: "tesla3-post-image" %>
+              <%= image_tag "tesla3.png", class: "tesla3-post-image ai-image" %>
             </div>
             <div class="post-show-detail">
-              <%= image_tag "tesla4.png", class: "tesla4-post-image" %>
+              <%= image_tag "tesla4.png", class: "tesla4-post-image ai-image" %>
             </div>
             <div class="post-show-detail">
-              <%= image_tag "tesla5.png", class: "tesla5-post-image" %>
+              <%= image_tag "tesla5.png", class: "tesla5-post-image ai-image" %>
             </div>
             <div class="post-show-detail">
-              <%= image_tag "tesla6.png", class: "tesla6-post-image" %>
+              <%= image_tag "tesla6.png", class: "tesla6-post-image ai-image" %>
             </div>
             <div class="post-show-detail">
-              <%= image_tag "tesla7.png", class: "tesla7-post-image" %>
+              <%= image_tag "tesla7.png", class: "tesla7-post-image ai-image" %>
             </div>
             <div class="post-show-detail">
-              <%= image_tag "tesla8.png", class: "tesla8-post-image" %>
+              <%= image_tag "tesla8.png", class: "tesla8-post-image ai-image" %>
             </div>
             <div class="post-show-detail">
-              <%= image_tag "tesla9.png", class: "tesla9-post-image" %>
+              <%= image_tag "tesla9.png", class: "tesla9-post-image ai-image" %>
             </div>
             <div class="post-show-detail">
-              <%= image_tag "tesla10.png", class: "tesla10-post-image" %>
+              <%= image_tag "tesla10.png", class: "tesla10-post-image ai-image" %>
             </div>
             <div class="post-show-detail">
-              <%= image_tag "tesla11.png", class: "tesla11-post-image" %>
+              <%= image_tag "tesla11.png", class: "tesla11-post-image ai-image" %>
             </div>
             <div class="post-show-detail">
-              <%= image_tag "tesla12.png", class: "tesla12-post-image" %>
+              <%= image_tag "tesla12.png", class: "tesla12-post-image ai-image" %>
             </div>
           </div>
         </div>

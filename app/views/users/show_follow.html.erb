@@ -8,7 +8,7 @@
         <% if @users.any? %>
           <div class="users-index">
             <% @users.each do |user| %>
-              <div class="post-show-icon">
+              <div class="post-show-icon flo">
                 <% if user.image_name? %>
                   <%= image_tag user.image_name.url, class: "host-icon" %>
                   <span class="host-name"><%= link_to user.name, user %></span>
@@ -32,10 +32,12 @@
             <%= link_to "詳細ページに戻る", @user %>
           </div>
         <% else %>
-          <div class="unpost-title">
-            <p>他のユーザーをフォローして企業分析、ビジネスモデル、株式の知識を参考にしよう！</p>
-            <%= render 'users' %>
-          </div>
+          <% if @user == @current_user %>
+            <div class="unpost-title">
+              <p>他のユーザーをフォローして企業分析、ビジネスモデル、株式の知識を参考にしよう！</p>
+              <%= render 'users' %>
+            </div>
+          <% end %>
           <div class="back-page">
             <%= link_to "詳細ページに戻る", @user %>
           </div>

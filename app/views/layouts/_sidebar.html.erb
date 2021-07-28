@@ -61,7 +61,7 @@
             <i class="far fa-clipboard nav_icon"></i>
             <span class="nav_name">投稿一覧</span>
           <% end %>
-          <%= link_to favorites_index_path, class: "nav_link" do %>
+          <%= link_to favorites_index_path(@user), class: "nav_link" do %>
             <i class="far fa-star nav_icon"></i>
             <span class="nav_name">お気に入り企業</span>
           <% end %>

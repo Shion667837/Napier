@@ -3,7 +3,7 @@
   <div class="users-index">
     <% @recommenusers.each do |user| %>
       <li>
-        <div class="post-show-icon">
+        <div class="post-show-icon flo">
           <% if user.image_name? %>
             <%= image_tag user.image_name.url, class: "host-icon" %>
             <span class="host-name"><%= link_to user.name, user %></span>

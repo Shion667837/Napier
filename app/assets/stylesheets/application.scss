@@ -601,6 +601,366 @@ a[data-toggle="collapse"] {
   padding: 30px;
 }
 
+@media screen and (max-width: 896px) {
+
+  div.alert {
+    width: 300px;
+  }
+
+  .top .top-main {
+    padding: 30px 0 230px 0;
+    width: 100%;
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  }
+
+  .top-contents {
+    width: 100%;
+    height: 500px;
+    padding: 35px;
+  }
+
+  .home-napier {
+    font-size: 60px;
+    letter-spacing: -1px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Times New Roman;
+    padding: 0 50px;
+  }
+
+  .napier-home-image {
+    object-fit: cover;
+    width: 130px;
+    height: 130px;
+    margin: 0 70px;
+  }
+
+  .home-about {
+    width: 250px;
+  }
+
+  .home-about h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .home-form {
+    border: 1px solid black;
+    width: 260px;
+    padding: 20px;
+    display: inline-block;
+  }
+
+  //footer
+
+  .footer-nav {
+    list-style: none;
+    padding-top: 30px;
+    display: inline-block;
+  }
+
+  .footer-nav li {
+    width: 350px;
+    text-align: center;
+    height: 45px;
+    line-height: 30px;
+    margin-right: 2px;
+  }
+
+  .footer-icon {
+    display: none;
+  }
+
+  .footer-item a {
+    font-size: 20px;
+  }
+
+  .footer-item span {
+    font-size: 20px;
+  }
+
+
+  //header
+  header {
+    width: 100%;
+    padding: 10px 0;
+    z-index: 2;
+    position: fixed;
+    background-color: white;
+    display: flex;
+  }
+
+  #logo {
+    float: left;
+    color: black;
+    font-size: 40px;
+    letter-spacing: -1px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Times New Roman;
+  }
+
+  .napier-image {
+    object-fit: cover;
+    width: 70px;
+    height: 60px;
+    padding-left: 10px;
+    float: left;
+  }
+
+  .post_search {
+    display: none;
+  }
+
+  div.open-btn {
+    position: relative;
+    display: inline;
+    padding: 10px 65px;
+    left: 60px;
+  }
+
+  div#search-wrap {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+  }
+
+  div#search-wrap.panelactive {
+    opacity: 1;
+    z-index: 3;
+    width: 280px;
+    top: 20;
+    background: #F6F8F9;
+    left: 60px;
+  }
+
+  li.btn1 a {
+    position: relative;
+    display: inline;
+    padding: 10px 65px;
+    font-size: 20px;
+  }
+
+  li.btn1 {
+    display: none;
+  }
+
+  li.btn2 {
+    display: none;
+  }
+
+  //about
+  div.top-form {
+    padding: 0;
+    width: 100%;
+    margin: 100px 0 0 0;
+    height: auto;
+  }
+
+  div.top-form h3 {
+    font-size: 30px;
+    padding: 10px;
+  }
+
+  div.top-footer-btn {
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  //signup
+
+  div.signup {
+    padding: 100px 0 100px 0;
+  }
+
+  div.signup-form {
+    text-align: center;
+    padding: 100px 100px;
+    margin: 30px auto;
+    border: 1px solid black;
+    border-radius: 4px;
+    display: inline-block;
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  }
+
+  div.signup-form h1 {
+    font-size: 18px;
+  }
+
+  //login
+
+  div.login-form {
+    padding: 100px 10px;
+  }
+
+  //homepage
+  .wrapper {
+    display: none;
+  }
+  #sidebar {
+    display: none;
+  }
+  .right-wrapper {
+    display: none;
+  }
+
+  div.container-fiuld.post {
+    width: 100%;
+    padding: 100px 0 70px 0;
+    color: #F6F8F9;
+  }
+
+  ul.all-post {
+    padding: 30px 0 70px 0;
+  }
+
+  div.rank-post-flame {
+    border: 1px solid #C0C0C0;
+    margin: 30px 10px;
+    padding: 50px;
+    width: 350px;
+    align-items: center;
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  }
+
+  ul#navigation {
+    display: flex;
+    justify-content: center;
+    margin-right: 120px;
+  }
+
+  //search index
+  div.post-flame {
+    padding:0 40px;
+  }
+
+  //user show
+
+  div.user-view-icon img {
+    border-radius: 50%;
+    height: 150px;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  div.stats {
+    overflow: auto;
+    margin-left: 10px;
+    padding: 10px;
+  }
+
+  .stats a {
+    padding: 0;
+    border-left: 1px solid #eeeeee;
+    color: gray;
+  }
+
+  div.user-post-flame {
+    border: 1px solid black;
+    margin: 30px 0;
+    width: 100%;
+    align-items: center;
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  }
+
+  //お気に入り
+
+  div.favorite-coop-items a {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  //人気投稿
+  ul.rank-user {
+    padding: 0;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding-left: 10px;
+  }
+
+  //フォロー
+  div.post-show-icon {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  div.flo {
+    border: 1px solid #dfe9f3;
+  }
+
+  div.post-show-icon div {
+    width: 200px;
+    text-align: center;
+    float: inherit;
+  }
+
+  //いいね
+  div.unpost-title h3 {
+    font-size: 25px;
+    padding: 30px 0;
+  }
+
+  //post show
+  img.stockprice-image {
+    width: 100%;
+    object-fit: cover;
+    padding-bottom: 50px;
+  }
+
+  div.slider.slick-initialized.slick-slider {
+    width: 300px;
+  }
+
+  div.post-show {
+    width: 100%;
+    padding: 150px 10px;
+  }
+
+  div.show-body {
+    padding: 0;
+  }
+
+  p.show-body {
+    padding: 10px 0 ;
+  }
+
+  div.post-show-form {
+    border: 1px solid black;
+    padding: 6px;
+    width: 300px;
+  }
+
+  img.ai-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  div.post-show-user {
+    display: flex;
+    padding-left: 70px;
+  }
+
+  div.edit-icon-show {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  div.edit-icon-show a{
+    font-size: 20px;
+  }
+
+  h3.text-left {
+    text-align: center;
+  }
+}
+
 .top-form{
   padding: 10px 70px 40px 70px;
   margin: 30px  100px 65px 100px;
@@ -706,16 +1066,21 @@ a[data-toggle="collapse"] {
 .top-footer-btn {
   align-items: center;
   margin: 24px auto;
-  width: 288px;
-  border-color: #5cb85c;
-  background-color: #fff;
+  width: 240px;
+  padding: 0 80px;
 }
 
 .top-footer-btn a {
   color: black;
   text-align: center;
   font-size: 20px;
+  text-decoration: none;
 }
+
+.top-footer-btn a:hover {
+  color: gray;
+}
+
 
 
 .row {
@@ -758,6 +1123,7 @@ a[data-toggle="collapse"] {
   margin: 30px auto;
   border: 1px solid black;
   border-radius: 4px;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 
 .signup-form h1 {
@@ -845,10 +1211,21 @@ a[data-toggle="collapse"] {
   margin-right: 10px;
 }
 
+
 .dropdown p {
   color: #111;
   margin: 0;
   font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle {
+    display: none;
+  }
+
+  div.open-btn {
+    display: none;
+  }
 }
 
 
@@ -885,15 +1262,14 @@ a[data-toggle="collapse"] {
   z-index: 1;
   bottom: 0;
   width: 100%;
-  height: 140px; /* グラデーションの高さ */
+  height: 140px;
   cursor: pointer;
   text-align: center;
-  /* 以下グラデーションは背景を自身のサイトに合わせて設定してください */
   background: linear-gradient(to bottom, rgba(250, 252, 252, 0) 0%, rgba(250, 252, 252, 0.95) 90%);
 }
 
 .cp_box input:checked + label {
-  background: inherit; /* 開いた時にグラデーションを消す */
+  background: inherit;
 }
 
 .cp_box label:after {
@@ -998,8 +1374,9 @@ a[data-toggle="collapse"] {
 }
 
 .like-user-side {
-  text-align: center;
-  padding: 30px 0;
+  text-align: left;
+  padding: 30px 10px;
+  border:  1px solid #F6F8F9;
 }
 
 .like-user-side a {
@@ -1056,6 +1433,15 @@ a[data-toggle="collapse"] {
 .edit-link-btn {
   text-align: center;
   padding: 30px;
+}
+
+.logout-link-btn {
+  text-align: center;
+  padding: 30px;
+}
+
+.logout-link-btn a {
+  text-decoration: none;
 }
 
 .unpost-title {
@@ -1176,16 +1562,29 @@ span.host-name {
   padding: 15px 0;
 }
 
-.show-place {
+.show-user-name {
   font-size: 14px;
+}
+
+.show-user-name a {
+  text-decoration: none;
 }
 
 .show-body {
   font-size: 16px;
   line-height: 30px;
-  padding: 30px 60px 300px 60px;
+  padding: 30px 0px;
   border-top: 1px solid black;
   word-break: break-all;
+}
+
+.post-show-user {
+  display: flex;
+}
+
+.edit-icon-show {
+  text-align: center;
+  margin-top: 30px;
 }
 
 
@@ -1635,4 +2034,88 @@ a.favorite-btn {
 .rank-no {
   font-size: 40px;
   text-align: center;
+}
+
+.open-btn{
+  position: absolute;
+  top:10px;
+  right:10px;
+  background: url("ifn0403.png") no-repeat 15px center;/*虫眼鏡アイコンを背景に表示*/
+  background-size: 50px 40px;
+  width:50px;
+  height:50px;
+  cursor: pointer;/*カーソルを指マークに*/
+}
+
+/*クリック後、JSでボタンに btnactive クラスが付与された後の見た目*/
+.open-btn.btnactive{
+  background:url("close.jpeg") no-repeat 15px center;/*閉じるアイコンを背景に表示*/
+  background-size: 40px 30px;
+}
+
+/*========= 検索窓の設定 ===============*/
+
+/*==検索窓背景のエリア*/
+
+#search-wrap{
+  position:absolute;/*絶対配置にして*/
+  top:150px;
+  right:20px;
+  z-index: -1;/*最背面に設定*/
+  opacity: 0;/*透過を0に*/
+  width:0;/*横幅は0に*/
+  transition: all 0.4s;/*transitionを使ってスムースに現れる*/
+  border-radius: 5px;
+}
+
+/*ボタンクリック後、JSで#search-wrapに panelactive クラスが付与された後の見た目*/
+#search-wrap.panelactive{
+  opacity: 1;/*不透明に変更*/
+  z-index: 3;/*全面に出現*/
+  width:280px;
+  padding:20px;
+  top:10px;
+  background:#fff;
+}
+
+/*==検索窓*/
+#search-wrap #searchform{
+  display: none;/*検索窓は、はじめ非表示*/
+}
+
+/*ボタンクリック後、JSで#search-wrapに panelactive クラスが付与された後*/
+#search-wrap.panelactive #searchform{
+  display: block;/*検索窓を表示*/
+}
+
+/*==検索フォームの設定*/
+
+/*==テキスト入力とボタンinput共通設定*/
+#search-wrap input{
+  -webkit-appearance:none;/*SafariやChromeのデフォルトの設定を無効*/
+  outline: none;
+  cursor: pointer;/*カーソルを指マークに*/
+  color: #666;
+}
+
+/*テキスト入力input設定*/
+#search-wrap input[type="text"] {
+  width: 100%;
+  border: none;
+  border-bottom:2px solid #ccc;
+  transition: all 0.5s;
+  letter-spacing: 0.05em;
+  height:46px;
+  padding: 10px;
+}
+
+/*ボタンinput設定*/
+#search-wrap input[type="submit"] {
+  position: absolute;
+  top: 24px;
+  right: 30px;
+  background: url("ifn0403.png") no-repeat 1px center;/*虫眼鏡アイコンを背景に表示*/
+  background-size: 50px 40px;
+  width: 50px;
+  height: 30px;
 }
