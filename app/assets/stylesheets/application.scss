@@ -704,8 +704,12 @@ a[data-toggle="collapse"] {
     object-fit: cover;
     width: 70px;
     height: 60px;
-    padding-left: 10px;
     float: left;
+    padding: 0;
+  }
+
+  #navigation li:first-child {
+    display: none;
   }
 
   .post_search {
@@ -713,14 +717,11 @@ a[data-toggle="collapse"] {
   }
 
   div.open-btn {
-    position: relative;
     display: inline;
-    padding: 10px 65px;
-    left: 60px;
+    left: 100;
   }
 
   div#search-wrap {
-    position: relative;
     display: block;
     padding: 10px 15px;
   }
@@ -731,7 +732,7 @@ a[data-toggle="collapse"] {
     width: 280px;
     top: 20;
     background: #F6F8F9;
-    left: 60px;
+    margin-left: 50px;
   }
 
   li.btn1 a {
@@ -827,7 +828,7 @@ a[data-toggle="collapse"] {
   ul#navigation {
     display: flex;
     justify-content: center;
-    margin-right: 120px;
+    margin-right: 60px;
   }
 
   //search index
@@ -1657,7 +1658,7 @@ span.host-name {
 
 .post-text-box {
   width: 100%;
-  padding: 15px;
+  padding: 15px 15px 30px 15px;
 }
 
 .post-name {
@@ -1693,87 +1694,10 @@ span.host-name {
   object-fit: cover;
 }
 
-.tesla1-post-image {
-  object-fit: cover;
+.ai-image {
   width: 100%;
-  height: 270px;
-  padding-bottom: 10px;
-}
-
-.tesla2-post-image {
+  height: 100%;
   object-fit: cover;
-  width: 570px;
-  height: 100px;
-  padding-bottom: 10px;
-}
-
-.tesla3-post-image {
-  object-fit: cover;
-  width: 100%;
-  height: 80px;
-  padding-bottom: 10px;
-}
-
-.tesla4-post-image {
-  object-fit: cover;
-  width: 100%;
-  height: 170px;
-  padding-bottom: 10px;
-}
-
-.tesla5-post-image {
-  object-fit: cover;
-  width: 100%;
-  height: 90px;
-  padding-bottom: 10px;
-}
-
-.tesla6-post-image {
-  object-fit: cover;
-  width: 100%;
-  height: 90px;
-  padding-bottom: 10px;
-}
-
-.tesla7-post-image {
-  object-fit: cover;
-  width: 100%;
-  height: 100px;
-  padding-bottom: 10px;
-}
-
-.tesla8-post-image {
-  object-fit: cover;
-  width: 100%;
-  height: 235px;
-  padding-bottom: 10px;
-}
-
-.tesla9-post-image {
-  object-fit: cover;
-  width: 100%;
-  height: 90px;
-  padding-bottom: 10px;
-}
-
-.tesla10-post-image {
-  object-fit: cover;
-  width: 100%;
-  height: 90px;
-  padding-bottom: 10px;
-}
-
-.tesla11-post-image {
-  object-fit: cover;
-  width: 100%;
-  height: 250px;
-  padding-bottom: 10px;
-}
-
-.tesla12-post-image {
-  object-fit: cover;
-  width: 100%;
-  height: 90px;
   padding-bottom: 10px;
 }
 
@@ -2038,10 +1962,8 @@ a.favorite-btn {
 
 .open-btn{
   position: absolute;
-  top:10px;
-  right:10px;
-  background: url("ifn0403.png") no-repeat 15px center;/*虫眼鏡アイコンを背景に表示*/
-  background-size: 50px 40px;
+  background: url("ifn0403.png") no-repeat 1px center;/*虫眼鏡アイコンを背景に表示*/
+  background-size: 50px 50px;
   width:50px;
   height:50px;
   cursor: pointer;/*カーソルを指マークに*/
@@ -2049,7 +1971,7 @@ a.favorite-btn {
 
 /*クリック後、JSでボタンに btnactive クラスが付与された後の見た目*/
 .open-btn.btnactive{
-  background:url("close.jpeg") no-repeat 15px center;/*閉じるアイコンを背景に表示*/
+  background:url("close.jpeg") no-repeat 1px center;/*閉じるアイコンを背景に表示*/
   background-size: 40px 30px;
 }
 
@@ -2060,7 +1982,6 @@ a.favorite-btn {
 #search-wrap{
   position:absolute;/*絶対配置にして*/
   top:150px;
-  right:20px;
   z-index: -1;/*最背面に設定*/
   opacity: 0;/*透過を0に*/
   width:0;/*横幅は0に*/
@@ -2072,10 +1993,10 @@ a.favorite-btn {
 #search-wrap.panelactive{
   opacity: 1;/*不透明に変更*/
   z-index: 3;/*全面に出現*/
-  width:280px;
-  padding:20px;
-  top:10px;
-  background:#fff;
+  width:  280px;
+  padding:  20px;
+  top:  40px;
+  background: #fff;
 }
 
 /*==検索窓*/
@@ -2112,7 +2033,7 @@ a.favorite-btn {
 /*ボタンinput設定*/
 #search-wrap input[type="submit"] {
   position: absolute;
-  top: 24px;
+  top: 22px;
   right: 30px;
   background: url("ifn0403.png") no-repeat 1px center;/*虫眼鏡アイコンを背景に表示*/
   background-size: 50px 40px;

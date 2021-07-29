@@ -71,6 +71,7 @@ class UsersController < ApplicationController
     render 'show_likes'
   end
 
+
   private
 
   def user_params

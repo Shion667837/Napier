@@ -5,7 +5,7 @@
       <%= render 'sidebar_show' %>
       <div class="user-index-post">
         <% if @user.likes.present? %>
-          <h2>いいね数： <%= @user.likes.count %></h2>
+          <h2>いいね数： <%= @user.likes.size %></h2>
           <%= @likes.each do |like| %>
             <div class="user-feed">
               <%= link_to post_path(like.post.id) do %>
@@ -32,6 +32,23 @@
                   <div class="post-text-box">
                     <p class="post-name"><%= like.post.name %></p>
                     <p class="post-place"><%= like.post.body.truncate(100) %></p>
+                    <div class="post-under-items">
+                      <p class="post-under-item" id="post_<%= like.post.id %>">
+                        <% if logged_in? %>
+                          <% if current_user.liked_by?(like.post.id) %>
+                            <%= render 'posts/unlike', post: like.post %>
+                          <% else %>
+                            <%= render 'posts/likes', post: like.post %>
+                          <% end %>
+                        <% else %>
+                          <%= render 'posts/likes', post: like.post %>
+                        <% end %>
+                      </p>
+                      <p class="post-under-item">
+                        <i class="far fa-comment"></i>
+                        <%= like.post.comments.count %>
+                      </p>
+                    </div>
                   </div>
                 </div>
               <% end %>

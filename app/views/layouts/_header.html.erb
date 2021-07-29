@@ -11,6 +11,7 @@
             <% f.submit %>
           <% end %>
         </li>
+        <li>
           <div class="open-btn"></div><!--開閉ボタン-->
           <div id="search-wrap"><!--表示エリアのHTML開閉ボタンをクリックするたび、search-wrap に表示用のクラス名が付与・除去されて付与の場合出現します。-->
             <form role="search" method="get" id="searchform" action="/posts/search">
@@ -19,14 +20,19 @@
             </form>
             <!--/search-wrap-->
           </div>
+        </li>
         <% if logged_in? %>
           <ul id="navigation">
             <li><%= link_to @current_user.name, @current_user %></li>
             <li>
               <% if @current_user.image_name? %>
-                <%= image_tag @current_user.image_name.url %>
+                <%= link_to @current_user do %>
+                  <%= image_tag @current_user.image_name.url %>
+                <% end %>
               <% else %>
-                <%= image_tag "/user_images/default.png" %>
+                <%= link_to @current_user do %>
+                  <%= image_tag "/user_images/default.png" %>
+                <% end %>
               <% end %>
               <li>
                 <div class="dropdown">

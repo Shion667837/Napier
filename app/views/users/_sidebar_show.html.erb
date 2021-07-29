@@ -53,10 +53,12 @@
     <i class="far fa-heart"></i>
     <%= link_to 'いいね一覧', likes_user_path(@user) %>
   </div>
-  <div class="like-user-side">
-    <i class="far fa-star"></i>
-    <%= link_to 'お気に入り企業一覧', favorites_index_path(@user) %>
-  </div>
+  <% if @user == current_user %>
+    <div class="like-user-side">
+      <i class="far fa-star"></i>
+      <%= link_to 'お気に入り企業一覧', favorites_index_path(@user) %>
+    </div>
+  <% end %>
   <% if @user == current_user %>
     <div class="logout-link-btn">
       <%= link_to "ログアウト", logout_path, method: :delete %>
