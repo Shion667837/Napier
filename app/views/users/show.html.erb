@@ -1,6 +1,7 @@
 <%= provide(:title, @user.name) %>
 <div class="user">
   <div class="container">
+    <p class="top-link"><%= link_to "HOME", root_path %> / 投稿一覧</p>
     <div class="user-main-contents">
       <%= render 'sidebar_show', user: @user %>
       <div class="user-index-post">

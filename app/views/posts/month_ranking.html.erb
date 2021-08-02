@@ -1,4 +1,5 @@
 <div class="container-fiuld post">
+  <p><%= link_to "HOME", root_path %> / <%= link_to "人気投稿ランキング", posts_post_ranking_path %> / 月間ランキング</p>
   <h3 class="ppp">月間ランキング</h3>
   <div class="rank_tabs mt-4">
     <%= link_to posts_post_ranking_path, class: "rank_tab btn" do %>
@@ -8,49 +9,55 @@
       週間
     <% end %>
   </div>
-  <ul class="rank-user">
-    <% @rank.each.with_index(1) do |post, i| %>
-      <p class="rank-no">第<%= i %>位</p>
-      <div class="user-feed">
-        <%= link_to "/posts/#{post.id}" do %>
-          <div class="rank-post-flame">
-            <div class="post-show-icon">
-              <% if post.user.image_name? %>
-                <%= image_tag post.user.image_name.url, class: "host-icon" %>
-                <span class="host-name"><%= post.user.name %></span>
-              <% else %>
-                <%= image_tag "/user_images/default.png", class: "host-icon" %>
-                <span class="host-name"><%= post.user.name %></span>
-              <% end %>
-              <% if logged_in? %>
-                <% if post.user_id == current_user.id %>
-                  <%= link_to  post, method: :delete, data: { confirm: "#{post.name}を削除して大丈夫ですか？" } do %>
-                    <i class="fas fa-trash-alt trash"></i>
-                  <% end %>
+  <% if @rank.present? %>
+    <div class="post-user">
+      <% @rank.each.with_index(1) do |post, i| %>
+        <p class="rank-no">第<%= i %>位</p>
+        <div class="user-feed">
+          <%= link_to "/posts/#{post.id}" do %>
+            <div class="post-flame">
+              <div class="post-show-icon">
+                <% if post.user.image_name? %>
+                  <%= image_tag post.user.image_name.url, class: "host-icon" %>
+                  <span class="host-name"><%= post.user.name %></span>
+                <% else %>
+                  <%= image_tag "/user_images/default.png", class: "host-icon" %>
+                  <span class="host-name"><%= post.user.name %></span>
                 <% end %>
-              <% end%>
-            </div>
-            <div class="post-img">
-              <img src="<%= post.stockprice %>" class="post-image" alt="画像">
-            </div>
-            <div class="post-text-box">
-              <p class="post-name"><%= post.name %></p>
-              <p class="post-place"><%= post.body.truncate(100) %></p>
-              <p class="post-price" id="post_<%= post.id %>">
                 <% if logged_in? %>
-                  <% if current_user.liked_by?(post.id) %>
-                    <%= render 'unlike', post: post %>
+                  <% if post.user_id == current_user.id %>
+                    <%= link_to  post, method: :delete, data: { confirm: "#{post.name}を削除して大丈夫ですか？" } do %>
+                      <i class="fas fa-trash-alt trash"></i>
+                    <% end %>
+                  <% end %>
+                <% end%>
+              </div>
+              <div class="post-img">
+                <img src="<%= post.stockprice %>" class="post-image" alt="画像">
+              </div>
+              <div class="post-text-box">
+                <p class="post-name"><%= post.name %></p>
+                <p class="post-place"><%= post.body.truncate(100) %></p>
+                <p class="post-price" id="post_<%= post.id %>">
+                  <% if logged_in? %>
+                    <% if current_user.liked_by?(post.id) %>
+                      <%= render 'unlike', post: post %>
+                    <% else %>
+                      <%= render 'likes', post: post %>
+                    <% end %>
                   <% else %>
                     <%= render 'likes', post: post %>
                   <% end %>
-                <% else %>
-                  <%= render 'likes', post: post %>
-                <% end %>
-              </p>
+                </p>
+              </div>
             </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </ul>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="unpost-ranking">
+      <h3>月間の投稿はありません</h3>
+    </div>
+  <% end %>
 </div>

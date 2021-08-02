@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   def home
     @posts = Post.all.order(created_at: :desc)
     @users = User.all
+    @recommenusers = User.all.order("RANDOM()").limit(6)
   end
 
   def about
@@ -58,15 +59,15 @@ class PostsController < ApplicationController
   end
 
   def post_ranking
-    @rank = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(5).pluck(:post_id))
+    @rank = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
   end
 
   def week_ranking
-    @rank = Post.find(Like.group(:post_id).where(likes: { created_at: Time.now.all_week }).order('count(post_id) desc').limit(5).pluck(:post_id))
+    @rank = Post.find(Like.group(:post_id).where(likes: { created_at: Time.now.all_week }).order('count(post_id) desc').limit(3).pluck(:post_id))
   end
 
   def month_ranking
-    @rank = Post.find(Like.group(:post_id).where(likes: { created_at: Time.now.all_month }).order('count(post_id) desc').limit(5).pluck(:post_id))
+    @rank = Post.find(Like.group(:post_id).where(likes: { created_at: Time.now.all_month }).order('count(post_id) desc').limit(3).pluck(:post_id))
   end
 
   private

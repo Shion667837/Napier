@@ -1,47 +1,72 @@
 <div class="container company-show">
-  <div class="company-show-prof">
-    <p class="company-show-name"><%= @company.coop_name %></p>
-    <p class="company-show-place"><%= @company.coop_place %></p>
-  </div>
-  <div class='star-btn' id="favorite_<%= @company.id %>">
-    <%= render "favorites/favorite", company: @company %>
-  </div>
-  <div class="company-show-form">
-    <div class="post-show-detail">
-      <%= image_tag "tesla1.png", class: "ai-image" %>
+  <p class="top-link"><%= link_to "HOME", root_path %> / 会社概要 / <%= @company.coop_name %></p>
+  <div class="row">
+    <div class="col-md-5">
+      <div class="company-show-prof">
+        <div class="company-prof-top">
+          <p class="company-show-name"><%= @company.coop_name %></p>
+          <div class='star-btn' id="favorite_<%= @company.id %>">
+            <%= render "favorites/favorite", company: @company %>
+          </div>
+        </div>
+        <p class="company-show-place">会社所在地 : <%= @company.coop_place %></p>
+        <div class="company-show-body">
+          <p>会社概要</p>
+          <p class="body-prof"><%= @company.coop_body %></p>
+        </div>
+      </div>
     </div>
-    <div class="post-show-detail">
-      <%= image_tag "tesla2.png", class: "ai-image" %>
-    </div>
-    <div class="post-show-detail">
-      <%= image_tag "tesla3.png", class: "ai-image" %>
-    </div>
-    <div class="post-show-detail">
-      <%= image_tag "tesla4.png", class: "ai-image" %>
-    </div>
-    <div class="post-show-detail">
-      <%= image_tag "tesla5.png", class: "ai-image" %>
-    </div>
-    <div class="post-show-detail">
-      <%= image_tag "tesla6.png", class: "ai-image" %>
-    </div>
-    <div class="post-show-detail">
-      <%= image_tag "tesla7.png", class: "ai-image" %>
-    </div>
-    <div class="post-show-detail">
-      <%= image_tag "tesla8.png", class: "ai-image" %>
-    </div>
-    <div class="post-show-detail">
-      <%= image_tag "tesla9.png", class: "ai-image" %>
-    </div>
-    <div class="post-show-detail">
-      <%= image_tag "tesla10.png", class: "ai-image" %>
-    </div>
-    <div class="post-show-detail">
-      <%= image_tag "tesla11.png", class: "ai-image" %>
-    </div>
-    <div class="post-show-detail">
-      <%= image_tag "tesla12.png", class: "ai-image" %>
+    <div class="col-md-7">
+      <div class="company-show-form">
+        <div class="post-image-detail">
+          <p class="explanation">2020年の四半期ごとのモデル別売上と生産台数</p>
+          <%= image_tag "tesla1.png", class: "ai-image" %>
+        </div>
+        <div class="post-image-detail">
+          <p class="explanation">株価と出来高</p>
+          <%= image_tag "tesla2.png", class: "ai-image" %>
+        </div>
+        <div class="post-image-detail">
+          <p class="explanation">株価推移の正規分布</p>
+          <%= image_tag "tesla3.png", class: "ai-image" %>
+        </div>
+        <div class="post-image-detail">
+          <p class="explanation">株価の集中度合い</p>
+          <%= image_tag "tesla4.png", class: "ai-image" %>
+        </div>
+        <div class="post-image-detail">
+          <p class="explanation">損益計算書の売上高、売上総利益、営業利益、当期純利益の推移</p>
+          <%= image_tag "tesla5.png", class: "ai-image" %>
+        </div>
+        <div class="post-image-detail">
+          <p class="explanation">貸借対照表の総資産、利益剰余金、自己資本、純資産、総資本推移</p>
+          <%= image_tag "tesla6.png", class: "ai-image" %>
+        </div>
+        <div class="post-image-detail">
+          <p class="explanation">株式発行枚数の推移</p>
+          <%= image_tag "tesla7.png", class: "ai-image" %>
+        </div>
+        <div class="post-image-detail">
+          <p class="explanation">当期純利益と棚卸資産の相関関係の強さを表す共分散と相関係数</p>
+          <%= image_tag "tesla8.png", class: "ai-image" %>
+        </div>
+        <div class="post-image-detail">
+          <p class="explanation">当期純利益と棚卸資産の推移</p>
+          <%= image_tag "tesla9.png", class: "ai-image" %>
+        </div>
+        <div class="post-image-detail">
+          <p class="explanation">キャッシュフロー計算書の主要項目３つの推移</p>
+          <%= image_tag "tesla10.png", class: "ai-image" %>
+        </div>
+        <div class="post-image-detail">
+          <p class="explanation">ROEとROAの推移を表した折れ線グラフ・売上総利益率と売上高営業利益率と当期純利益率の中に含まれる数値の割合</p>
+          <%= image_tag "tesla11.png", class: "ai-image" %>
+        </div>
+        <div class="post-image-detail">
+          <p class="explanation">未来の株価の予測結果</p>
+          <%= image_tag "tesla12.png", class: "ai-image" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

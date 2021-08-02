@@ -1,12 +1,23 @@
-<div class="container-fiuld post-posts">
+
+<div class="container-fiuld favorite-posts">
   <h3 class="ppp">お気に入り企業一覧</h3>
-  <div class="favorite-coop-items">
-    <div class="container">
-      <% @favorite_companies.each do |company| %>
-        <div class="favo-item">
-          <%= link_to company.coop_name, "/posts/1" %>
-        </div>
-      <% end %>
+  <% if @favorite_companies.present? %>
+    <div class="favorite-coop-items">
+      <div class="container">
+        <%= link_to "/posts/1" do %>
+          <% @favorite_companies.each do |company| %>
+            <div class="favo-item">
+              <i class="far fa-building favo-icon"></i>
+              <h2><%= company.coop_name %></h2>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
+  <% else %>
+  <div class="unfavorite-coop">
+    <h3>まだ企業をお気に入りしていません</h3>
+    <h3><%= link_to "企業一覧", companies_path %>から好きな企業をお気に入り登録するとここに表示されます</h3>
   </div>
+  <% end %>
 </div>

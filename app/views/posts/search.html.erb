@@ -1,8 +1,9 @@
 <div class="container-fiuld post">
+  <p><%= link_to "HOME", root_path %> / <%= link_to "検索", root_path %> / 検索結果</p>
   <h3 class="ppp"><%= @results.count %>件の検索結果</h3>
-  <div class="row">
+  <div class="post-user">
     <% @results.each do |post| %>
-      <div class="col-sm-6 col-lg-4 col-xl-3">
+      <div class="user-feed">
         <div class="post-flame">
           <%= link_to post_path(post.id) do %>
             <div class="post-show-icon">

@@ -111,3 +111,11 @@ $(".open-btn").click(function () {
   $("#search-wrap").toggleClass('panelactive');//#search-wrapへpanelactiveクラスを付与
   $('#search-text').focus();//テキスト入力のinputにフォーカス
 });
+
+$(document).ready(function () {
+
+  $('#sidebarCollapse').on('click', function () {
+      $('#sidebar').toggleClass('active');
+  });
+
+});

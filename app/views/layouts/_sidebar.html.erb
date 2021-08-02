@@ -1,135 +1,194 @@
 <%= render 'layouts/header' %>
-<div class="wrapper" id="nav-bar">
-  <nav id="sidebar">
-    <div class="sidebar-item-fixed">
-      <div class="sideber-main-host">
-        <div class="sidebar-header">
-          <% if @current_user.image_name? %>
-            <%= image_tag @current_user.image_name.url %>
-          <% else %>
-            <%= image_tag "/user_images/default.png" %>
-          <% end %>
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div id="dismiss">
+          <i class="fas fa-arrow-left"></i>
         </div>
-        <div class="sidebar-host">
-          <%= @current_user.name %>
-        </div>
-        <div class="side-stats">
-          <%= render 'shared/side_stats' %>
-        </div>
-        <div class="sidebar-body">
-          <%= @current_user.body %>
-        </div>
-        <div class="sidebar-sns">
-          <% if @current_user.twitter.present? %>
-            <div class="profile-link">
-              <%= link_to @current_user.twitter, target: :_blank do %>
-                <i class="fab fa-twitter-square"></i>
-              <% end %>
-            </div>
-          <% end %>
-          <% if @current_user.facebook.present? %>
-            <div class="profile-link">
-              <%= link_to @current_user.facebook, target: :_blank do %>
-                <i class="fab fa-facebook-square"></i>
-              <% end %>
-            </div>
-          <% end %>
-          <% if @current_user.instagram.present? %>
-            <div class="profile-link">
-              <%= link_to @current_user.instagram, target: :_blank do %>
-                <i class="fab fa-instagram"></i>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-        <div class="sidebar-btn">
-          <div class="btn btn-primary">
-            <%= link_to "プロフィール編集", edit_user_path(@current_user) %>
-          </div>
-        </div>
-        <div class="sidebar-btn">
-          <div class="post-btn">
-            <%= link_to new_post_path do %>
-              <i class="fas fa-share-square"></i>
+        <h3 class="sidebar-top-title">プロフィール</h3>
+        <div class="sideber-main-host">
+          <div class="sidebar-header">
+            <% if @current_user.image_name? %>
+              <%= image_tag @current_user.image_name.url %>
+            <% else %>
+              <%= image_tag "/user_images/default.png" %>
             <% end %>
           </div>
-        </div>
-      </div>
-      <div class="nav_list">
-        <div class="sidebar-list">
-          <%= link_to @user, class: "nav_link active border" do %>
-            <i class="far fa-clipboard nav_icon"></i>
-            <span class="nav_name">投稿一覧</span>
-          <% end %>
-          <%= link_to favorites_index_path(@user), class: "nav_link" do %>
-            <i class="far fa-star nav_icon"></i>
-            <span class="nav_name">お気に入り企業</span>
-          <% end %>
-        </div>
-        <div class="sidebar-list">
-          <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="nav_link">
-            <i class="fas fa-crown nav_icon"></i>
-            <span class="nav_name">人気投稿ランキング</span>
-          </a>
-          <ul class="collapse list-unstyled" id="pageSubmenu">
-            <li>
-              <%= link_to '全体', posts_post_ranking_path %>
-            </li>
-            <li>
-              <%= link_to '週間', posts_week_ranking_path %>
-            </li>
-            <li>
-              <%= link_to '月間', posts_month_ranking_path %>
-            </li>
-          </ul>
-          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="nav_link">
-            <i class='far fa-building nav_icon'></i>
-            <span class="nav_name">企業一覧</span>
-          </a>
-          <ul class="collapse list-unstyled" id="homeSubmenu">
-            <div class="search-area">
-              <form>
-                <input type="text" id="search-text" placeholder="検索ワードを入力">
-              </form>
-              <div class="search-result">
-                <div class="search-result__hit-num"></div>
-                <div id="search-result__list"></div>
+          <div class="sidebar-host">
+            <%= @current_user.name %>
+          </div>
+          <div class="side-stats">
+            <%= render 'shared/side_stats' %>
+          </div>
+          <div class="sidebar-body">
+            <%= @current_user.body %>
+          </div>
+          <div class="sidebar-sns">
+            <% if @current_user.twitter.present? %>
+              <div class="profile-link">
+                <%= link_to @current_user.twitter, target: :_blank do %>
+                  <i class="fab fa-twitter-square"></i>
+                <% end %>
               </div>
+            <% end %>
+            <% if @current_user.facebook.present? %>
+              <div class="profile-link">
+                <%= link_to @current_user.facebook, target: :_blank do %>
+                  <i class="fab fa-facebook-square"></i>
+                <% end %>
+              </div>
+            <% end %>
+            <% if @current_user.instagram.present? %>
+              <div class="profile-link">
+                <%= link_to @current_user.instagram, target: :_blank do %>
+                  <i class="fab fa-instagram"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <div class="sidebar-btn">
+            <div class="btn btn-gray">
+              <%= link_to "プロフィール編集", edit_user_path(@current_user) %>
             </div>
-            <ul class="target-area">
-              <li>
-                <a class="tesla" href="companies/1">TESLA</a>
-              </li>
-              <li>
-                <a class="tesla" href="companies/2">Apple</a>
-              </li>
-              <li>
-                <a class="tesla" href="companies/3">Google</a>
-              </li>
-              <li>
-                <a class="tesla" href="companies/4">Amazon</a>
-              </li>
-              <li>
-                <a class="tesla" href="companies/5">NETFLIX</a>
-              </li>
-            </ul>
-          </ul>
+          </div>
+          <div class="sidebar-btn">
+            <div class="post-btn">
+              <%= link_to new_post_path do %>
+                <i class="fas fa-share-square"></i>
+              <% end %>
+            </div>
+          </div>
         </div>
-        <div class="sidebar-list">
-          <%= link_to about_path, class: "nav_link" do %>
-            <i class="fab fa-adn nav_icon"></i>
-            <span class="nav_name">ネイピアとは</span>
-          <% end %>
-          <a href="#" class="nav_link">
-            <i class='fas fa-users-cog nav_icon'></i>
-            <span class="nav_name">利用規約</span>
-          </a>
-          <a href="#" class="nav_link">
-            <i class='fas fa-question nav_icon'></i>
-            <span class="nav_name">ヘルプ</span>
-          </a>
-        </div>
-      </div>
+        <ul class="list-unstyled components">
+          <li>
+            <%= link_to @user do %>
+              <div  class="nav-fonts">
+                <i class="far fa-clipboard nav_icon"></i>
+                <span>投稿一覧</span>
+              </div>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to favorites_index_path(@user) do %>
+              <div class="nav-fonts">
+                <i class="far fa-star nav_icon"></i>
+                <span>お気に入り企業</span>
+              </div>
+            <% end %>
+          </li>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                  <div class="nav-fonts">
+                    <i class="fas fa-crown nav_icon"></i>
+                    <span>人気投稿ランキング</span>
+                  </div>
+                </a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                      <%= link_to '全体', posts_post_ranking_path %>
+                    </li>
+                    <li>
+                      <%= link_to '週間', posts_week_ranking_path %>
+                    </li>
+                    <li>
+                      <%= link_to '月間', posts_month_ranking_path %>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                  <div class="nav-fonts">
+                    <i class="far fa-building nav_icon"></i>
+                    <span>企業を探す</span>
+                  </div>
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                  <div class="search-area">
+                    <form>
+                      <input type="text" id="search-text" placeholder="検索ワードを入力">
+                    </form>
+                    <div class="search-result">
+                      <div class="search-result__hit-num"></div>
+                      <div id="search-result__list"></div>
+                    </div>
+                  </div>
+                  <ul class="target-area">
+                    <li>
+                      <a href="companies/1">TESLA</a>
+                    </li>
+                    <li>
+                      <a class="tesla" href="companies/2">Apple</a>
+                    </li>
+                    <li>
+                      <a class="tesla" href="companies/3">Google</a>
+                    </li>
+                    <li>
+                      <a class="tesla" href="companies/4">Amazon</a>
+                    </li>
+                    <li>
+                      <a class="tesla" href="companies/5">NETFLIX</a>
+                    </li>
+                  </ul>
+                </ul>
+            </li>
+            <li>
+            <%= link_to about_path do %>
+              <div class="nav-fonts">
+                <i class="fab fa-adn nav_icon"></i>
+                <span>ネイピアとは</span>
+              </div>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to '#' do %>
+              <div class="nav-fonts">
+                <i class='fas fa-users-cog nav_icon'></i>
+                <span>利用規約</span>
+              </div>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to '#' do %>
+              <div class="nav-fonts">
+                <i class='fas fa-question nav_icon'></i>
+                <span>ヘルプ</span>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+    </nav>
+    <!-- Page Content -->
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
     </div>
-  </nav>
+    <!-- Dark Overlay element -->
+    <div class="overlay"></div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+          theme: "minimal"
+      });
+      $('#dismiss, .overlay').on('click', function () {
+          // hide sidebar
+          $('#sidebar').removeClass('active');
+          // hide overlay
+          $('.overlay').removeClass('active');
+      });
+      $('#sidebarCollapse').on('click', function () {
+          // open sidebar
+          $('#sidebar').addClass('active');
+          // fade in the overlay
+          $('.overlay').addClass('active');
+          $('.collapse.in').toggleClass('in');
+          $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+  });
+</script>

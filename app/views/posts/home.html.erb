@@ -2,11 +2,12 @@
   <%= render 'layouts/sidebar' %>
   <%= render 'users/user_index' %>
   <div class="container-fiuld post">
+    <h2>HOME</h2>
     <ul class="all-post">
       <% @posts.each do |post| %>
         <%= link_to "posts/#{post.id}" do %>
           <div class="user-feed">
-            <div class="rank-post-flame">
+            <div class="post-flame">
               <div class="post-show-icon">
                 <% if post.user.image_name? %>
                   <%= image_tag post.user.image_name.url, class: "host-icon" %>

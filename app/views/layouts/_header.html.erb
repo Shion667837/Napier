@@ -2,6 +2,16 @@
   <div class="container">
     <%= link_to "Napier", root_path, id: "logo" %>
     <%= image_tag "IMG_9442.PNG", class: "napier-image" %>
+    <div class="resposive-search">
+      <div class="open-btn"></div><!--開閉ボタン-->
+      <div id="search-wrap"><!--表示エリアのHTML開閉ボタンをクリックするたび、search-wrap に表示用のクラス名が付与・除去されて付与の場合出現します。-->
+        <form role="search" method="get" id="searchform" action="/posts/search">
+          <input placeholder="キーワード" type="search" value="" name="q[name_or_body_or_place_cont]" id="q_name_or_body_or_place_cont search-text">
+          <input type="submit" id="searchsubmit" value="">
+        </form>
+        <!--/search-wrap-->
+      </div>
+    </div>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li class="search-form">
@@ -10,16 +20,6 @@
             <%= f.search_field :name_or_body_or_place_cont, placeholder: "キーワード" %>
             <% f.submit %>
           <% end %>
-        </li>
-        <li>
-          <div class="open-btn"></div><!--開閉ボタン-->
-          <div id="search-wrap"><!--表示エリアのHTML開閉ボタンをクリックするたび、search-wrap に表示用のクラス名が付与・除去されて付与の場合出現します。-->
-            <form role="search" method="get" id="searchform" action="/posts/search">
-              <input placeholder="キーワード" type="search" value="" name="q[name_or_body_or_place_cont]" id="q_name_or_body_or_place_cont search-text">
-              <input type="submit" id="searchsubmit" value="">
-            </form>
-            <!--/search-wrap-->
-          </div>
         </li>
         <% if logged_in? %>
           <ul id="navigation">
@@ -40,8 +40,7 @@
                     <p>三</p>
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuBotton">
-                    <a class="dropdown-item"><%= link_to "アカウント", @current_user %></a><br>
-                    <a class="dropdown-item"><%= link_to "編集", edit_user_path(@current_user) %></a><br>
+                    <a class="dropdown-item"><%= link_to "設定", edit_user_path(@current_user) %></a><br>
                     <a class="dropdown-item"><%= link_to "投稿する", new_post_path %></a><br>
                     <a class="dropdown-item"><%= link_to "投稿一覧", @current_user %></a><br>
                     <a class="dropdown-item"><%= link_to "お気に入り企業", favorites_index_path %></a><br>

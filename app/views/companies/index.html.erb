@@ -1,23 +1,38 @@
-<div class="container-fiuld post-posts">
+<div class="container company-index">
   <h3 class="ppp">企業一覧</h3>
-  <div class="favorite-coop-items">
-    <div class="container">
-      <ul class="favo-list">
-        <li class="favo-list-item">
-          <a class="tesla" href="companies/1">TESLA</a>
-        </li>
-        <li class="favo-list-item">
-          <a class="tesla" href="companies/2">Apple</a>
-        </li>
-        <li class="favo-list-item">
-          <a class="tesla" href="companies/3">Google</a>
-        </li>
-        <li class="favo-list-item">
-          <a class="tesla" href="companies/4">Amazon</a>
-        </li>
-        <li class="favo-list-item">
-          <a class="tesla" href="companies/5">NETFLIX</a>
-        </li>
+  <div class="company-index-list">
+    <div class="coop-items">
+      <ul class="coop-list">
+        <%= link_to "companies/1" do %>
+          <li class="coop-list-item">
+            <p>TESLA</p>
+            <%= image_tag "tesla_logo_PNG9.png", class: "company-image" %>
+          </li>
+        <% end %>
+        <%= link_to "companies/2" do %>
+          <li class="coop-list-item">
+            <p>APPLE</p>
+            <%= image_tag "apple.gif", class: "company-image" %>
+          </li>
+        <% end %>
+        <%= link_to "companies/3" do %>
+          <li class="coop-list-item">
+            <p>GOOGLE</p>
+            <%= image_tag "google-logo.png", class: "company-image" %>
+          </li>
+        <% end %>
+        <%= link_to "companies/4" do %>
+          <li class="coop-list-item">
+            <p>AMAZON</p>
+            <%= image_tag "amazon_logo.png", class: "amazon-image" %>
+          </li>
+        <% end %>
+        <%= link_to "companies/5" do %>
+          <li class="coop-list-item">
+            <p>NETFLIX</p>
+            <%= image_tag "Netflix-Symbol.png", class: "company-image" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
