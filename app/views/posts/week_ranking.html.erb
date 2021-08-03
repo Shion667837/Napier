@@ -38,17 +38,23 @@
               <div class="post-text-box">
                 <p class="post-name"><%= post.name %></p>
                 <p class="post-place"><%= post.body.truncate(100) %></p>
-                <p class="post-price" id="post_<%= post.id %>">
-                  <% if logged_in? %>
-                    <% if current_user.liked_by?(post.id) %>
-                      <%= render 'unlike', post: post %>
+                <div class="post-under-items">
+                  <p class="post-under-item" id="post_<%= post.id %>">
+                    <% if logged_in? %>
+                      <% if current_user.liked_by?(post.id) %>
+                        <%= render 'unlike', post: post %>
+                      <% else %>
+                        <%= render 'likes', post: post %>
+                      <% end %>
                     <% else %>
                       <%= render 'likes', post: post %>
                     <% end %>
-                  <% else %>
-                    <%= render 'likes', post: post %>
-                  <% end %>
-                </p>
+                  </p>
+                  <p class="post-under-item">
+                    <i class="far fa-comment"></i>
+                    <%= post.comments.count %>
+                  </p>
+                </div>
               </div>
             </div>
           <% end %>
