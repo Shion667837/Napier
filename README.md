@@ -1,24 +1,43 @@
-# README
+# アプリ名
+Napier ネイピア
+# サイトロゴ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 画像
 
-Things you may want to cover:
+# 概要
+投資に特化したTwitterのような物で、現状はユーザーが色々な企業の株価のスクショと、その企業がどう収益を生んでるか、どのような事業を行なっているかを独自で分析し、パワーポイントでまとめたスクショと説明を投稿する事で他ユーザーがそれを参考にして投資を始めたり、様々な知識を共有したりする事を目的としています。このアプリケーションをきっかけに投資に興味を持ち始め、自分で自己資産を築き、投資をしている人たちの人口が増えれば良いなという思いで作成しました。
 
-* Ruby version
+# バージョン
+Ruby 3.0.0
+Rails 6.1.3
 
-* System dependencies
+# 使用言語
+* Ruby
+* JavaScript
+* Html
+* Css
 
-* Configuration
+# 実装機能
+## 投稿関連
+* 一覧表示機能
+* 詳細表示機能
+* 削除機能
+* 編集機能
+* 画像拡大機能
+* 人気投稿ランキング表示機能
+* キーワード検索機能
 
-* Database creation
+## ユーザー関連
+* 新規登録機能
+* ログイン・ログアウト機能
+* 編集機能
+* 投稿・削除・編集機能
+* コメント機能
+* いいね機能
 
-* Database initialization
+## 企業関連
+* 一覧表示
+* お気に入り機能
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# その他
+* rspec、capybaraによる簡易的なテストの導入
