@@ -5,7 +5,7 @@ Napier ネイピア
 <img src="https://user-images.githubusercontent.com/68118250/128129897-e1df17c8-9e49-4ac4-88d9-b836db06691b.PNG" width="100px">
 
 ## 画像
-<img src="https://user-images.githubusercontent.com/68118250/128132286-a44cc728-945b-4327-96eb-00e8e3d00a79.png" width="200px">
+<img src="https://user-images.githubusercontent.com/68118250/128132286-a44cc728-945b-4327-96eb-00e8e3d00a79.png" width="500px" height="300px">
 
 ## 概要
 Napierは、投資に特化したTwitterのような物で、現状はユーザーが色々な企業の株価のスクショと、その企業がどう収益を生んでるか、どのような事業を行なっているかを独自で分析し、パワーポイントでまとめたスクショと説明を投稿する事で他ユーザーがそれを参考にして投資を始めたり、様々な知識を共有したりする事を目的としています。このアプリケーションをきっかけに投資に興味を持ち始め、自分で自己資産を築き、投資をしている人たちの人口が増えれば良いなという思いで作成しました。
