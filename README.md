@@ -1,7 +1,7 @@
 # アプリ名
 Napier ネイピア
 # サイトロゴ
-![IMG_9442](https://user-images.githubusercontent.com/68118250/128129897-e1df17c8-9e49-4ac4-88d9-b836db06691b.PNG)
+<img src="https://user-images.githubusercontent.com/68118250/128129897-e1df17c8-9e49-4ac4-88d9-b836db06691b.PNG" width="100px">
 
 # 画像
 
