@@ -1,10 +1,10 @@
 module ApplicationHelper
-  BASE_TITLE = 'Napier'.freeze
   def full_title(page_title)
+    base_title = 'Napier'.freeze
     if page_title.blank?
-      BASE_TITLE
+      base_title
     else
-      "#{page_title} - #{BASE_TITLE}"
+      "#{page_title} - #{base_title}"
     end
   end
 end

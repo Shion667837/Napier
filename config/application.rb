@@ -21,5 +21,12 @@ module Napier
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.i18n.default_locale = :ja
     config.assets.initialize_on_precompile = false
+    config.generators do |g|
+      g.test_framework :rspec,
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false,
+        controller_specs: false
+    end
   end
 end
