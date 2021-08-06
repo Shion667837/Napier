@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/guest_sign_in', to: 'sessions#new_guest'
   post '/like/:id', to: 'likes#create', as: 'create_like'
   delete '/like/:id', to: 'likes#destroy', as: 'destroy_like'
   root 'posts#home'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  post 'guest_login', to: 'guest_sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/favorites/index', to: 'favorites#index'
 

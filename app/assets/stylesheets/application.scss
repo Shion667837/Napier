@@ -323,7 +323,7 @@ h3.sidebar-top-title {
 }
 
 .sidebar-host {
-  font-size: 30px;
+  font-size: 20px;
   padding: 0 50px;
   text-align: center;
 }
@@ -901,7 +901,7 @@ h3.sidebar-top-title {
 .users {
   list-style: none;
   margin: 0;
-  padding: 20px 10px 0 10px;
+  padding: 20px 5px 0 5px;
   overflow: hidden;
   width: 100%;
   li {
@@ -909,6 +909,10 @@ h3.sidebar-top-title {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+
+.host-name a {
+  font-size: 15px;
 }
 
 .users-index {
@@ -1054,7 +1058,10 @@ h3.sidebar-top-title {
 
 .update-contents {
   border-bottom: 1px solid #eaedef;
-  font-size: 16px;
+}
+
+.update-contents h3 {
+  font-size: 20px;
 }
 
 .like-user-side {
