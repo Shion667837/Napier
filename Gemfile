@@ -80,7 +80,6 @@ group :development do
   gem 'rubocop'
   gem 'rubocop-rails', require: false
   gem 'spring'
-  gem 'spring-commands-rspec'
 end
 
 group :test do
