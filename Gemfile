@@ -79,7 +79,7 @@ group :development do
   gem 'parser', '3.0.0.0'
   gem 'rubocop'
   gem 'rubocop-rails', require: false
-  gem 'spring'
+  #gem 'spring'
 end
 
 group :test do
