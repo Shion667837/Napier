@@ -1,4 +1,5 @@
 <%= provide(:title, @title) %>
+<%= render 'layouts/header' %>
 <div class="user">
   <div class="container">
     <p class="top-link"><%= link_to "HOME", root_path %> / <%= link_to @user.name, @user %> / <%= @title %></p>

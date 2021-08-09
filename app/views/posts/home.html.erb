@@ -1,55 +1,59 @@
 <% if logged_in? %>
+  <%= render 'layouts/header' %>
   <%= render 'layouts/sidebar' %>
   <%= render 'users/user_index' %>
   <div class="container-fiuld post">
-    <h2>HOME</h2>
     <ul class="all-post">
       <% @posts.each do |post| %>
-        <%= link_to "posts/#{post.id}" do %>
-          <div class="user-feed">
-            <div class="post-flame">
-              <div class="post-show-icon">
-                <% if post.user.image_name? %>
-                  <%= image_tag post.user.image_name.url, class: "host-icon" %>
-                  <span class="host-name"><%= post.user.name %></span>
-                <% else %>
-                  <%= image_tag "/user_images/default.png", class: "host-icon" %>
-                  <span class="host-name"><%= post.user.name %></span>
-                <% end %>
-                <% if logged_in? %>
-                  <% if post.user_id == current_user.id %>
-                    <%= link_to  post, method: :delete, data: { confirm: "#{post.name}を削除して大丈夫ですか？" } do %>
-                      <i class="fas fa-trash-alt trash"></i>
-                    <% end %>
+        <div class="user-feed">
+          <div class="post-flame">
+            <div class="post-show-icon">
+              <% if post.user.image_name? %>
+                <%= image_tag post.user.image_name.url, class: "host-icon" %>
+                <span class="host-name"><%= link_to post.user.name, post.user %></span>
+              <% else %>
+                <%= image_tag "/user_images/default.png", class: "host-icon" %>
+                <span class="host-name"><%= link_to post.user.name, post.user %></span>
+              <% end %>
+              <% if logged_in? %>
+                <% if post.user_id == current_user.id %>
+                  <%= link_to  post, method: :delete, data: { confirm: "#{post.name}を削除して大丈夫ですか？" } do %>
+                    <i class="fas fa-trash-alt trash"></i>
                   <% end %>
-                <% end%>
+                <% end %>
+              <% end%>
+            </div>
+            <div class="post-img">
+              <div class="slider post-image">
+                <% if post.images.attached? %>
+                  <% post.images.each do |image| %>
+                      <%= image_tag image %>
+                  <% end %>
+                <% end %>
               </div>
-              <div class="post-img">
-                <img src="<%= post.stockprice %>" class="post-image" alt="画像">
-              </div>
-              <div class="post-text-box">
-                <p class="post-name"><%= post.name %></p>
-                <p class="post-place"><%= post.body.truncate(100) %></p>
-                <div class="post-under-items">
-                  <p class="post-under-item" id="post_<%= post.id %>">
-                    <% if logged_in? %>
-                      <% if current_user.liked_by?(post.id) %>
-                        <%= render 'unlike', post: post %>
-                      <% else %>
-                        <%= render 'likes', post: post %>
-                      <% end %>
+            </div>
+            <div class="post-text-box">
+              <p class="post-name"><%= post.name %></p>
+              <p class="post-place"><%= link_to post.body.truncate(100), "/posts/#{post.id}" %></p>
+              <div class="post-under-items">
+                <p class="post-under-item" id="post_<%= post.id %>">
+                  <% if logged_in? %>
+                    <% if current_user.liked_by?(post.id) %>
+                      <%= render 'unlike', post: post %>
                     <% else %>
                       <%= render 'likes', post: post %>
                     <% end %>
-                  </p>
-                  <p class="post-under-item">
-                    <i class="far fa-comment"></i>
-                    <%= post.comments.count %>
-                  </p>
-                </div>
+                  <% else %>
+                    <%= render 'likes', post: post %>
+                  <% end %>
+                </p>
+                <p class="post-under-item">
+                  <i class="far fa-comment"></i>
+                  <%= post.comments.count %>
+                </p>
               </div>
             </div>
-          <% end %>
+          </div>
         </div>
       <% end %>
     </ul>
@@ -93,3 +97,9 @@
   </div>
   <%= render "layouts/footer" %>
 <% end %>
+<script>
+  $(function() {
+    $('.slider').slick(
+    );
+  });
+</script>
