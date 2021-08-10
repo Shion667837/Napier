@@ -50,7 +50,7 @@ class UsersController < ApplicationController
 
   def following
     @title = 'フォロー'
-    @user  = User.find(params[:id])
+    @user = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page])
     @recommenusers = User.where.not(id: current_user.id).order("RANDOM()").limit(5)
     render 'show_follow'
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
 
   def followers
     @title = 'フォロワー'
-    @user  = User.find(params[:id])
+    @user = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     @recommenusers = User.where.not(id: current_user.id).order("RANDOM()").limit(5)
     render 'show_follow'

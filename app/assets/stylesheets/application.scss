@@ -1080,10 +1080,16 @@ h3.sidebar-top-title {
 }
 
 .update-contents {
-  padding: 0 30px;
+  padding: 0 100px;
 }
-.update-contents h3 {
-  font-size: 20px;
+
+.update-contents h2 {
+  font-size: 17px;
+  padding: 10px;
+  border: 1px solid #FFF;
+  background-color: #F6F8F9;
+  border-radius: 10px;
+  margin: 0;
 }
 
 .like-user-side {
@@ -1842,7 +1848,7 @@ p.body-prof {
 .favo-item {
   display: flex;
   padding: 30px;
-  margin: 30px;
+  margin: 30px 30px 30px 130px;
   border: 1px solid #C0C0C0;
   background-color: #fff;
 }
@@ -2435,5 +2441,17 @@ a.favorite-btn {
 
   .user p.top-link {
     margin-left: 0;
+  }
+
+  div.update-contents {
+    padding: 30px;
+  }
+
+  div.update-contents h2{
+    font-size: 17px;
+  }
+
+  div.favo-item {
+    margin: 30px;
   }
 }
