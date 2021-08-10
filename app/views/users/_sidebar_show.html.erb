@@ -7,48 +7,47 @@
         <img src="<%= "/user_images/#{@user.image_name}" %>">
       <% end %>
     </div>
-    <div class="user-view-name">
-      <h3><%= @user.name %></h3>
-    </div>
-    <div class="stats">
-      <%= render 'shared/stats' %>
-    </div>
-    <%= render 'follow_form' if logged_in? %>
-    <div class="user-view-sns">
-      <ul class="profile-links">
-        <% if @user.twitter.present? %>
-          <li class="profile-link">
-            <%= link_to @user.twitter, target: :_blank do %>
-              <i class="fab fa-twitter-square"></i>
-            <% end %>
-          </li>
-        <% end %>
-        <% if @user.facebook.present? %>
-          <li class="profile-link">
-            <%= link_to @user.facebook, target: :_blank do %>
-              <i class="fab fa-facebook-square"></i>
-            <% end %>
-          </li>
-        <% end %>
-        <% if @user.instagram.present? %>
-          <li class="profile-link">
-            <%= link_to @user.instagram, target: :_blank do %>
-              <i class="fab fa-instagram"></i>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
+    <div class="user-view-details">
+      <div class="user-view-detail">
+        <div class="user-view-name">
+          <h3><%= @user.name %></h3>
+        </div>
+        <%= render 'follow_form' if logged_in? %>
+      </div>
+      <div class="stats">
+        <%= render 'shared/stats' %>
+      </div>
     </div>
   </div>
   <div class="update-contents">
     <h3>自己紹介</h3>
-    <h3><%= @user.body %></h3>
+    <h2><%= @user.body %></h2>
   </div>
-  <% if @user == current_user %>
-    <div class="edit-link-btn">
-      <%= link_to "編集", edit_user_path(@user), class: "btn btn-primary" %>
-    </div>
-  <% end %>
+  <div class="user-view-sns">
+    <ul class="profile-links">
+      <% if @user.twitter.present? %>
+        <li class="profile-link">
+          <%= link_to @user.twitter, target: :_blank do %>
+            <i class="fab fa-twitter-square"></i>
+          <% end %>
+        </li>
+      <% end %>
+      <% if @user.facebook.present? %>
+        <li class="profile-link">
+          <%= link_to @user.facebook, target: :_blank do %>
+            <i class="fab fa-facebook-square"></i>
+          <% end %>
+        </li>
+      <% end %>
+      <% if @user.instagram.present? %>
+        <li class="profile-link">
+          <%= link_to @user.instagram, target: :_blank do %>
+            <i class="fab fa-instagram"></i>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
   <div class="like-user-side">
     <i class="far fa-heart"></i>
     <%= link_to 'いいね一覧', likes_user_path(@user) %>
@@ -57,11 +56,6 @@
     <div class="like-user-side">
       <i class="far fa-star"></i>
       <%= link_to 'お気に入り企業一覧', favorites_index_path(@user) %>
-    </div>
-  <% end %>
-  <% if @user == current_user %>
-    <div class="logout-link-btn">
-      <%= link_to "ログアウト", logout_path, method: :delete %>
     </div>
   <% end %>
 </div>

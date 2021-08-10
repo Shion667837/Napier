@@ -24,13 +24,7 @@
               <% end%>
             </div>
             <div class="post-img">
-              <div class="slider post-image">
-                <% if post.images.attached? %>
-                  <% post.images.each do |image| %>
-                      <%= image_tag image %>
-                  <% end %>
-                <% end %>
-              </div>
+              <img src="<%= post.stockprice %>" class="post-image" alt="画像">
             </div>
             <div class="post-text-box">
               <p class="post-name"><%= post.name %></p>
@@ -97,9 +91,3 @@
   </div>
   <%= render "layouts/footer" %>
 <% end %>
-<script>
-  $(function() {
-    $('.slider').slick(
-    );
-  });
-</script>

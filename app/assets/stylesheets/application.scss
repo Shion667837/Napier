@@ -22,7 +22,7 @@ body {
   margin: auto;
   position: relative;
   min-height: 100vh;
-  background-color: #F6F8F9;
+  background-color: #f5f5f5;
 }
 
 section {
@@ -133,7 +133,7 @@ nav {
   left: 10px;
   width: 400px;
   height: 70px;
-  z-index: 2;
+  z-index: 9999;
 }
 
 .error-alert {
@@ -262,7 +262,7 @@ footer h3 {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #EEEEEE;
+  background-color: #222222;
   z-index: 999;
   padding-bottom: 20px;
   box-sizing: border-box;
@@ -325,6 +325,7 @@ h3.sidebar-top-title {
   font-size: 20px;
   padding: 0 50px;
   text-align: center;
+  color: #fff;
 }
 
 .stats {
@@ -341,7 +342,7 @@ h3.sidebar-top-title {
     }
     &:hover {
       text-decoration: none;
-      color: blue;
+      color: #fff;
     }
   }
 }
@@ -353,14 +354,14 @@ h3.sidebar-top-title {
   a {
     padding: 0 10px;
     border-left: 1px solid $gray-lighter;
-    color: gray;
+    color: #fff;
     &:first-child {
       padding-left: 0;
       border: 0;
     }
     &:hover {
       text-decoration: none;
-      color: blue;
+      color: gray;
     }
   }
 }
@@ -372,17 +373,18 @@ h3.sidebar-top-title {
   padding: 20px;
   overflow-wrap:  break-word;
   text-align: center;
+  color: #fff;
 }
 
 .sidebar-sns {
   width: 65%;
-	margin: 15px auto;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	border-top: 1px solid #dddddd;
-	padding-top: 15px;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  border-top: 1px solid #dddddd;
+  padding-top: 15px;
 }
 
 .sidebar-sns li {
@@ -435,7 +437,7 @@ h3.sidebar-top-title {
 
 #sidebar ul li a:hover {
   color: #7386D5;
-  background: white;
+  background: gray;
 }
 
 #sidebar ul ul a {
@@ -445,7 +447,9 @@ h3.sidebar-top-title {
 
 .nav-fonts {
   display: flex;
+  color: #fff;
 }
+
 
 .nav_icon {
   width: 30px;
@@ -514,7 +518,6 @@ h3.sidebar-top-title {
   height: 100%;
   position: fixed;
   overflow: auto;
-  background-color: #F6F8F9;
   border-right: 1px solid black;
   padding-bottom: 20px;
   padding-right: 110px;
@@ -912,7 +915,8 @@ h3.sidebar-top-title {
 
 .index-user-icon {
   padding: 10px;
-  border: 1px solid #C0C0C0;
+  border: 1px solid #fff;
+  border-radius: 10px;
   background-color: #fff;
 }
 
@@ -931,7 +935,7 @@ h3.sidebar-top-title {
 .user-show-icon {
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid black;
+  border: 1px solid #eaedef;
   border-radius: 10px;
   background-color: #fff;
 }
@@ -1004,8 +1008,8 @@ h3.sidebar-top-title {
 // user show
 
 .user p.top-link {
-  text-align: left;
   margin-bottom: 30px;
+  margin-left: 150px;
 }
 
 .user-nav {
@@ -1019,36 +1023,50 @@ h3.sidebar-top-title {
 .user-view-box {
   background-color: #fff;
   border: 1px solid #eaedef;
+  border-radius: 10px;
   width: 100%;
   padding: 8px 0;
-  margin-right: 16px;
-  max-width: 360px;
-  float: left;
+  margin-left: 250px;
+  max-width: 860px;
 }
 
 .user-view-prof {
   align-items: center;
   margin-bottom: 3px;
-  justify-content: center;
   padding: 20px;
+  display: flex;
 }
 
 .user-view-icon {
-  padding: 50px 50px 10px 50px;
+  padding: 20px 20px;
 }
 
 .user-view-icon img {
   border-radius: 50%;
-  height: 220px;
-  margin-bottom: 16px;
-  width: 100%;
+  height: 100px;
+  width: 100px;
 }
 
-.user-view-name {
+.user-view-details {
+  display: block;
+  margin-left: 100px;
+  max-width: 320px;
+}
+
+.user-view-detail {
+  display: flex;
+  margin: 0 30px;
+}
+
+.user-view-name h3{
   color: #8A8B8B;
   font-size: 20px;
   line-height: 1.5;
+  margin: 0;
+  padding-left: 30px;
+  padding-right: 40px;
 }
+
 
 .user-view-sns {
   display: flex;
@@ -1062,9 +1080,8 @@ h3.sidebar-top-title {
 }
 
 .update-contents {
-  border-bottom: 1px solid #eaedef;
+  padding: 0 30px;
 }
-
 .update-contents h3 {
   font-size: 20px;
 }
@@ -1072,7 +1089,6 @@ h3.sidebar-top-title {
 .like-user-side {
   text-align: left;
   padding: 30px 10px;
-  border:  1px solid #F6F8F9;
 }
 
 .like-user-side a {
@@ -1086,15 +1102,15 @@ h3.sidebar-top-title {
 
 .user-index-post {
   width: 100%;
-  padding: 0 0 300px 0;
+  padding-bottom: 100px;
   max-width: 708px;
-  float: right;
+  margin-left: 290px;
 }
 
 .user-post-flame {
-  border: 1px solid black;
+  border: 1px solid #fff;
+  border-radius: 10px;
   margin: 30px 0;
-  width: 700px;
   align-items: center;
   background-color: #fff;
 }
@@ -1142,6 +1158,11 @@ h3.sidebar-top-title {
 
 .unpost-title {
   padding: 50px;
+  border: 1px solid #eaedef;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-left: 50px;
 }
 
 .unpost-title h3 {
@@ -1202,7 +1223,8 @@ h3.sidebar-top-title {
 }
 
 .post-flame {
-  border: 1px solid #C0C0C0;
+  border: 1px solid #eaedef;
+  border-radius: 10px;
   margin: 10px 0;
   width: 100%;
   max-width: 614px;
@@ -2213,11 +2235,35 @@ a.favorite-btn {
 
   //user show
 
+  div.user-view-box {
+    margin-left: 0;
+  }
+
+  div.user-view-prof {
+    display: block;
+  }
+
+  div.user-index-post {
+    margin-left: 0;
+  }
+
   div.user-view-icon img {
     border-radius: 50%;
-    height: 150px;
+    height: 200px;
     margin-bottom: 16px;
     width: 100%;
+  }
+
+  div.user-view-details {
+    margin-left: 0;
+  }
+
+  div.user-view-name h3 {
+    padding-left: 50px;
+  }
+
+  div.host-detail-items {
+    display: none;
   }
 
   div.stats {
@@ -2364,5 +2410,30 @@ a.favorite-btn {
 
   .lightbox-target .container {
     width: 100%;
+  }
+
+  p.top-link {
+    text-align: center;
+  }
+
+  h3.sidebar-top-title {
+    color: #fff;
+  }
+
+  div#dismiss {
+    color: #fff;
+  }
+
+  div.user-view-detail {
+    display: block;
+  }
+
+  div.unpost-title {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .user p.top-link {
+    margin-left: 0;
   }
 }

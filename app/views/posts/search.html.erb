@@ -1,6 +1,7 @@
 <%= render 'layouts/header' %>
+<%= render 'layouts/sidebar' %>
 <div class="container-fiuld post">
-  <p><%= link_to "HOME", root_path %> / <%= link_to "検索", root_path %> / 検索結果</p>
+  <p class="top-link"><%= link_to "HOME", root_path %> / <%= link_to "検索", root_path %> / 検索結果</p>
   <h3 class="ppp"><%= @results.count %>件の検索結果</h3>
   <div class="post-user">
     <% @results.each do |post| %>
