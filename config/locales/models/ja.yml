@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      post: 投稿
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+      post:
+        name: タイトル
+        body: 概要
+        stockprice: 株価
+        images: 画像

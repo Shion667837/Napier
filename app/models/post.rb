@@ -5,6 +5,9 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :companies, dependent: :destroy
   validates :user_id, presence: true
+  validates :name, presence: true
+  validates :stockprice, presence: true
+  validates :images, presence: true
   validates :body, presence: true, length: { maximum: 200 }
   has_many_attached :images
   mount_uploader :stockprice, ImageUploader
